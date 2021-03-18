@@ -1,7 +1,8 @@
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5_v3.png";
 import cart from "../img/cart.png";
+import login from "../img/login.png";
 
 function Navigation() {
   return (
@@ -31,21 +32,20 @@ function Navigation() {
           </NavDropdown>
         </Nav>
         <Nav>
-        <form action="/" method="get">
-        <label htmlFor="header-search">
-        </label>
-        <input
-            type="text"
-            id="header-search"
-            placeholder="Hae tuotteita"
-            name="s" 
-        />
-        <button type="submit">Hae</button>
-    </form>
+        <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-primary">Search</Button>
+    </Form>
         </Nav>
         <Nav>
           <Nav.Link href="#deets">
-            Kirjaudu
+          <img
+        src={login}
+        width="70"
+        height="70"
+        className="d-inline-block align-top"
+        alt="Log in"
+      />
           </Nav.Link>
           <Nav.Link eventKey={2} href="#cart">
           <img

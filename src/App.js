@@ -2,7 +2,7 @@ import Navigation from './components/navigation';
 import ProductGroups from './components/productGroups';
 import Footer from './components/Footer'
 import ProductList from './components/ProductList';
-import BottomLinks from './components/BottomLinks'
+import BottomLinks from './components/BottomLinks';
 
 function App() {
   return (
