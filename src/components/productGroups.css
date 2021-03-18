@@ -1,14 +1,12 @@
 .groups {
     display: flex;
     flex-direction: column;
-    width: 200px;
 }
 
 .productGroups {
     background-color: grey;
     margin-bottom: 0;
     text-align: center;
-    width: 200px;
     background-color: #45A29E;
     padding: 5px;
 }
@@ -23,5 +21,31 @@
     border: none;
 }
 .groupsButton:hover {
+    background-color: #66FCF1;
+}
+
+.productGroupsMain {
+    width: 200px;
+    border: solid 1px gray;
+}
+
+.dialogAndGroups {
+    display: flex;
+}
+
+.subGroupCol {
+    flex: 1 150px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+}
+
+.subGroups {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subGroupCol:hover {
     background-color: #66FCF1;
 }
