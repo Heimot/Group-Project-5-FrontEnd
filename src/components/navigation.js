@@ -1,11 +1,18 @@
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import icon from "../img/D5_v3.png";
 
 function Navigation() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
-        aaaaaa
+      <img
+        src={icon}
+        width="120"
+        height="60"
+        className="d-inline-block align-top"
+        alt="DigiFemma logo"
+      />
     </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
