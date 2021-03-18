@@ -31,5 +31,21 @@
 
 .dialogAndGroups {
     display: flex;
-    flex-direction: row;
+}
+
+.subGroupCol {
+    flex: 1 150px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+}
+
+.subGroups {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subGroupCol:hover {
+    background-color: #66FCF1;
 }

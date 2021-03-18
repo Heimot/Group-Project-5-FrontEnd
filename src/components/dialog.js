@@ -1,16 +1,17 @@
 let dialogStyles = {
-    width: '1000px',
-    maxWidth: '100%',
-    height: 'auto',
+    width: '500px',
+    minWidth: '300px',
+    maxWidth: '500px',
+    height: '500px',
     maxHeight: '85%',
     margin: '0 auto',
     position: 'fixed',
     zIndex: '999',
     backgroundColor: 'white',
-    padding: '10px 20px 40px',
     display: 'flex',
     flexDirection: 'column',
-    border: "solid 1px grey"
+    border: "solid 1px grey",
+    marginLeft: "-1px"
 };
 
 function Dialog(props) {
@@ -28,7 +29,7 @@ function Dialog(props) {
         }
 
         return (
-                <div>
+                <div onMouseLeave={() => props.mouseLeft()} onMouseEnter={() => props.mouseOn()}>
                   {dialog}
                 </div>
         )
