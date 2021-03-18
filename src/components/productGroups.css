@@ -1,14 +1,12 @@
 .groups {
     display: flex;
     flex-direction: column;
-    width: 200px;
 }
 
 .productGroups {
     background-color: grey;
     margin-bottom: 0;
     text-align: center;
-    width: 200px;
     background-color: #45A29E;
     padding: 5px;
 }
@@ -24,4 +22,14 @@
 }
 .groupsButton:hover {
     background-color: #66FCF1;
+}
+
+.productGroupsMain {
+    width: 200px;
+    border: solid 1px gray;
+}
+
+.dialogAndGroups {
+    display: flex;
+    flex-direction: row;
 }

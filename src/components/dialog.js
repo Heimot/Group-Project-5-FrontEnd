@@ -5,9 +5,6 @@ let dialogStyles = {
     maxHeight: '85%',
     margin: '0 auto',
     position: 'fixed',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%,-50%)',
     zIndex: '999',
     backgroundColor: 'white',
     padding: '10px 20px 40px',
@@ -17,7 +14,6 @@ let dialogStyles = {
 };
 
 function Dialog(props) {
-    console.log(props)
         let dialog = (
                 <div>
                     <div>
