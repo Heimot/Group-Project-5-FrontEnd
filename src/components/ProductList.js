@@ -1,30 +1,17 @@
 import React from "react";
 import ProductItem from "./ProductItem";
 import "./productList.css";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+
+let arr = [{ tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }]
 
 export default function ProductList() {
   return (
-    <>
-      <Container>
-      <Row className="productRow">
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-      </Row>
-      <Row className="productRow">
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-      </Row>
-      <Row className="productRow">
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-          <Col><ProductItem/></Col>
-      </Row>
-      </Container>
-      </>
+        <div className="productRow">
+          {arr.map(item => {
+            return (
+              <div className="productListCol"><ProductItem product={item} /></div>
+            )
+          })}
+        </div>
   );
 };
