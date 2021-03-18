@@ -3,6 +3,7 @@ import ProductGroups from './components/productGroups';
 import Footer from './components/Footer'
 import ProductList from './components/ProductList';
 import BottomLinks from './components/BottomLinks'
+import Mainos from './components/Mainos';
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       </div>
       <BottomLinks />
       <Footer />
+      <Mainos />
     </div>
   );
 }
