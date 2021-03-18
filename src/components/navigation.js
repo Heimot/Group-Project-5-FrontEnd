@@ -1,6 +1,7 @@
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5_v3.png";
+import cart from "../img/cart.png";
 
 function Navigation() {
   return (
@@ -17,8 +18,6 @@ function Navigation() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
@@ -32,11 +31,30 @@ function Navigation() {
           </NavDropdown>
         </Nav>
         <Nav>
+        <form action="/" method="get">
+        <label htmlFor="header-search">
+        </label>
+        <input
+            type="text"
+            id="header-search"
+            placeholder="Hae tuotteita"
+            name="s" 
+        />
+        <button type="submit">Hae</button>
+    </form>
+        </Nav>
+        <Nav>
           <Nav.Link href="#deets">
-            AAAAA
+            Kirjaudu
           </Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            AAAAA
+          <Nav.Link eventKey={2} href="#cart">
+          <img
+        src={cart}
+        width="60"
+        height="60"
+        className="d-inline-block align-top"
+        alt="Cart"
+      />
         </Nav.Link>
         </Nav>
       </Navbar.Collapse>
