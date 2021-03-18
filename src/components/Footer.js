@@ -9,7 +9,7 @@ export default function Footer() {
                <p>Ryhmä 5</p>
             </div>
             <div className="col text-center">
-               Testi2
+               <p>Someikonit</p>
             </div>
          </div>
       </footer>

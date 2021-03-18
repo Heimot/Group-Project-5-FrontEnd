@@ -1,8 +1,12 @@
-import Footer from './components/Footer.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './components/navigation';
+import ProductGroups from './components/productGroups';
+import Footer from './components/Footer'
+
 function App() {
   return (
     <div className="App">
+      <Navigation />
+      <ProductGroups />
       <Footer />
     </div>
   );
