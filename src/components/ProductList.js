@@ -9,7 +9,7 @@ export default function ProductList() {
         <div className="productRow">
           {arr.map(item => {
             return (
-              <div className="productListCol"><ProductItem product={item} /></div>
+              <ProductItem product={item} />
             )
           })}
         </div>
