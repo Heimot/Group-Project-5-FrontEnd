@@ -32,42 +32,42 @@ function AdSlider() {
         <div>
             <Slider className="adMargins" {...settings}>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="bigad" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
             </Slider>
             <Slider className="adMargins" {...settings2}>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="smallad" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD}></img>
                 </div>
             </Slider>
         </div>
