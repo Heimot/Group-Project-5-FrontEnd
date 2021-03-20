@@ -1,10 +1,10 @@
-.smallad {
+.SMALLAD {
     max-width: 100%;
     max-height:  150px;
     margin: 0 auto;
  }
  
- .bigad {
+ .BIGAD {
     max-width: 100%;
     max-height:  425px;
     margin: 0 auto;
