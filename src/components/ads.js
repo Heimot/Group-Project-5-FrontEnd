@@ -50,7 +50,7 @@ function AdSlider() {
                     <img alt="ad" className="bigad" src={AD}></img>
                 </div>
             </Slider>
-            <Slider className="marginTest" {...settings2}>
+            <Slider className="adMargins" {...settings2}>
                 <div>
                     <img alt="ad" className="smallad" src={AD}></img>
                 </div>
