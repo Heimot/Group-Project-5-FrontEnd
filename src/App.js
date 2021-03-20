@@ -3,6 +3,7 @@ import ProductGroups from './components/productGroups';
 import Footer from './components/Footer'
 import ProductList from './components/ProductList';
 import BottomLinks from './components/BottomLinks'
+import AdSlider from './components/ads';
 import './App.css'
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
           <ProductGroups />
         </div>
         <div className="col-md-9 col-lg-10">
-          <ProductList />
+          <AdSlider />
         </div>
       </div>
+      <ProductList />
       <BottomLinks />
       <Footer />
     </div>
