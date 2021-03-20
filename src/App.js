@@ -21,7 +21,6 @@ function App() {
       <ProductList />
       <BottomLinks />
       <Footer />
-      <Mainos />
     </div>
   );
 }
