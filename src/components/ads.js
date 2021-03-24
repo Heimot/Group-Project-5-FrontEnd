@@ -29,7 +29,7 @@ function AdSlider() {
     };
 
     return (
-        <div>
+        <div className="allADS container">
             <Slider className="adMargins" {...settings}>
                 <div>
                     <img alt="ad" className="BIGAD" src={AD}></img>
