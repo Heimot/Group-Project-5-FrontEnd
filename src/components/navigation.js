@@ -1,8 +1,9 @@
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import icon from "../img/D5_v3.png";
+import icon from "../img/D5-uus.png";
 import cart from "../img/cart.png";
 import login from "../img/login.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Navigation() {
   return (
@@ -10,7 +11,7 @@ function Navigation() {
       <Navbar.Brand href="#home">
       <img
         src={icon}
-        width="120"
+        width="100"
         height="60"
         className="d-inline-block align-top"
         alt="DigiFemma logo"

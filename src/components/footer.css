@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 .bottomi {
+   font-family: 'Syne Mono', monospace;
    background-color: #0B0C10;
    color: #66FCF1;
 }

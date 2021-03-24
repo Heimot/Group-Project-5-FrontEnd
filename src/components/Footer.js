@@ -1,5 +1,6 @@
 import React from 'react'
 import './footer.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Footer() {
    return (
@@ -10,7 +11,7 @@ export default function Footer() {
                <p>Ryhmä 5</p>
             </div>
             <div className="col text-center">
-               <p>Someikonit</p>
+               <p>Someikonit </p>
             </div>
          </div>
       </footer>
