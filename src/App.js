@@ -5,6 +5,7 @@ import ProductList from './components/ProductList';
 import BottomLinks from './components/BottomLinks'
 import AdSlider from './components/ads';
 import './App.css'
+import Tietoja from './components/Tietoja';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       </div>
       <ProductList />
       <BottomLinks />
+      <Tietoja />
       <Footer />
     </div>
   );
