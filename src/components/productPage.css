@@ -1,0 +1,51 @@
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-next {
+  margin-right: 75px;
+  z-index: 10;
+}
+
+.slick-prev {
+  margin-left: 75px;
+  z-index: 10;
+}
+
+.productPicture {
+    max-width: 350px;
+    max-height:  100%;
+    margin: 0 auto;
+ }
+
+ .productSlider {
+    max-width: 500px;
+ }
+
+ .productPrice {
+   margin-top: 40px;
+   margin-bottom: 20px;
+   font-size: 20px;
+   font-weight: bold;
+ }
+
+ .productCode {
+   color: grey;
+   font-size: 13px;
+ }
+
+ .productPurchaseBtn {
+   margin-right: 10px;
+   width: 175px;
+   height: 50px;
+   color: #1F2833; 
+   background-color: #66FCF1;
+   border-color: #66FCF1;
+   font-weight: 500;
+ }
+
+ .productDescription {
+   margin-top: 60px;
+   max-width: 325px;
+ }
