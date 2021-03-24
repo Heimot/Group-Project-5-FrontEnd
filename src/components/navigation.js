@@ -1,8 +1,9 @@
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import icon from "../img/D5_v3.png";
+import icon from "../img/D5-uus.png";
 import cart from "../img/cart.png";
 import login from "../img/login.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Navigation() {
   return (

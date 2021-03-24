@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+
+.text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+
+.price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
 .moreData {
     position: absolute;
     display: flex;
@@ -35,4 +49,9 @@
     background-color: #66FCF1;
     border-color: #66FCF1;
     font-weight: 500;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.productCardMoreData {
+    font-family: 'Rajdhani', sans-serif;
 }

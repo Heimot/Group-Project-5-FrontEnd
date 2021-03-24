@@ -7,6 +7,7 @@ import BottomLinks from './components/BottomLinks'
 import AdSlider from './components/ads';
 import ProductPage from './components/productPage';
 import './App.css'
+import Tietoja from './components/Tietoja';
 
 function App() {
   return (
@@ -33,7 +34,10 @@ function App() {
             <Route exact path="/">
               <ProductList />
             </Route>
-            <BottomLinks />
+            <Route exact path="/">
+              <BottomLinks />
+              <Tietoja />
+            </Route>
             <Footer />
           </Route>
         </Switch>
