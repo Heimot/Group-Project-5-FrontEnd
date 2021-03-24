@@ -8,14 +8,14 @@ function Navigation() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
-      <img
-        src={icon}
-        width="120"
-        height="60"
-        className="d-inline-block align-top"
-        alt="DigiFemma logo"
-      />
-    </Navbar.Brand>
+        <img
+          src={icon}
+          width="120"
+          height="60"
+          className="d-inline-block align-top"
+          alt="DigiFemma logo"
+        />
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -32,30 +32,30 @@ function Navigation() {
           </NavDropdown>
         </Nav>
         <Nav>
-        <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-primary">Search</Button>
-    </Form>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-primary">Search</Button>
+          </Form>
         </Nav>
         <Nav>
           <Nav.Link href="#deets">
-          <img
-        src={login}
-        width="70"
-        height="70"
-        className="d-inline-block align-top"
-        alt="Log in"
-      />
+            <img
+              src={login}
+              width="70"
+              height="70"
+              className="d-inline-block align-top"
+              alt="Log in"
+            />
           </Nav.Link>
           <Nav.Link eventKey={2} href="#cart">
-          <img
-        src={cart}
-        width="60"
-        height="60"
-        className="d-inline-block align-top"
-        alt="Cart"
-      />
-        </Nav.Link>
+            <img
+              src={cart}
+              width="60"
+              height="60"
+              className="d-inline-block align-top"
+              alt="Cart"
+            />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
