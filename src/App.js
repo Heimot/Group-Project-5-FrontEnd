@@ -16,12 +16,12 @@ function App() {
           <Route path="/">
             <Navigation />
             <div className="row rowWidth">
-              <div className="col-md-3 col-lg-2 fucking">
+              <div className="col-md-3 col-lg-2 productGroupsRow">
                 <Route exact path="/">
                   <ProductGroups />
                 </Route>
               </div>
-              <div className="col-md-9 col-lg-10 fuck">
+              <div className="col-md-9 col-lg-10 adSliderRow">
                 <Route exact path="/">
                   <AdSlider />
                 </Route>
