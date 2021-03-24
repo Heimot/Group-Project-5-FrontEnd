@@ -2,14 +2,14 @@ import React from "react";
 import ProductItem from "./ProductItem";
 import "./productList.css";
 
-let arr = [{ tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { tuote: "Tuote nimi", hinta: "50€", kuva: "" }]
+let arr = [{ id: 1, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 2, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 3, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 4, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 5, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 6, tuote: "Tuote nimi", hinta: "50€", kuva: "" }, { id: 7, tuote: "Tuote nimi", hinta: "50€", kuva: "" }]
 
 export default function ProductList() {
   return (
         <div className="productRow">
           {arr.map(item => {
             return (
-              <ProductItem product={item} />
+              <ProductItem key={item.id} product={item} />
             )
           })}
         </div>
