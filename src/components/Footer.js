@@ -2,7 +2,7 @@ import React from 'react'
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { fab, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { fab, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 export default function Footer() {
@@ -14,8 +14,9 @@ export default function Footer() {
                <p>Ryhmä 5</p>
             </div>
             <div className="col text-center">
-               <p>Someikonit </p>
-               <FontAwesomeIcon icon={faFacebook} />  
+               <a href="#"><FontAwesomeIcon icon={faFacebook} /></a> 
+               <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+               
             </div>
          </div>
       </footer>
