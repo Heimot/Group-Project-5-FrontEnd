@@ -1,6 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-import AD from '../img/ad.png';
+import AD from '../img/tarjous.jpg';
+import AD2 from '../img/gaming.jpg';
+import AD3 from '../img/outeletpohja.jpg';
+import AD4 from '../img/tarjouskevat.jpg';
+import AD5 from '../img/toimisto.jpg';
 import './ads.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -35,36 +39,24 @@ function AdSlider() {
                     <img alt="ad" className="BIGAD" src={AD}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="BIGAD" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD2}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="BIGAD" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD3}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="BIGAD" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD4}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="BIGAD" src={AD}></img>
-                </div>
-                <div>
-                    <img alt="ad" className="BIGAD" src={AD}></img>
+                    <img alt="ad" className="BIGAD" src={AD5}></img>
                 </div>
             </Slider>
             <Slider className="adMargins" {...settings2}>
                 <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD2}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
-                </div>
-                <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
-                </div>
-                <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
-                </div>
-                <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD3}></img>
                 </div>
                 <div>
                     <img alt="ad" className="SMALLAD" src={AD}></img>

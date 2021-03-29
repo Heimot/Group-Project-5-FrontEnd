@@ -34,8 +34,8 @@ function Navigation() {
         </Nav>
         <Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-primary">Search</Button>
+            <FormControl type="text" placeholder="Hae tuotteita tai valmistajia" className="mr-sm-3" />
+            <Button className="nappi">Hae</Button>
           </Form>
         </Nav>
         <Nav>
