@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Dialog from './dialog';
+import Dialog from './Dialog';
 import "./productGroups.css";
 
 function ProductGroups() {
