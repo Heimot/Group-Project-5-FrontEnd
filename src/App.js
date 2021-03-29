@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navigation from './components/navigation';
-import ProductGroups from './components/productGroups';
-import Footer from './components/Footer'
+import Navigation from './components/Navigation';
+import ProductGroups from './components/ProductGroups';
+import Footer from './components/Footer';
 import ProductList from './components/ProductList';
 import BottomLinks from './components/BottomLinks'
-import AdSlider from './components/ads';
-import ProductPage from './components/productPage';
+import AdSlider from './components/Ads';
+import ProductPage from './components/ProductPage';
 import './App.css'
 import Tietoja from './components/Tietoja';
 

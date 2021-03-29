@@ -1,6 +1,6 @@
 import React from 'react'
 import icon from "../img/pc_kauppa.jpg";
-import './Mainos.css'
+import './mainos.css'
 
 
 
