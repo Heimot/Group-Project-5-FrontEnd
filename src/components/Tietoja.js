@@ -93,8 +93,8 @@ export default function Tietoja() {
                             </div>
                             <pre></pre>
                             <div>
-                                <h3 >Kivijalkaliike</h3>
-                                <p >Jos haluat asioida paikanpäällä liikkeemme toivottaa sinut tervetulleeksi!</p>
+                                <h3 >Kivijalkaliike ja verkkokauppa</h3>
+                                <p >Jos haluat asioida paikanpäällä verkkosivun sijaan, liikkeemme toivottaa sinut tervetulleeksi!</p>
                             </div>
                         </div>
                     </div>
