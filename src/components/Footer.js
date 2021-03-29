@@ -16,7 +16,6 @@ export default function Footer() {
             <div className="col text-center">
                <a href="#"><FontAwesomeIcon icon={faFacebook} /></a> 
                <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
-               
             </div>
          </div>
       </footer>
