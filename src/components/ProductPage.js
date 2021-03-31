@@ -60,10 +60,10 @@ function ProductPage() {
             <div className="row">
                 <div className="col-sm-12 col-lg-5">
                     <Slider className="productSlider" {...productImageSettings}>
-                        <img src={IMG} className="productPicture" />
-                        <img src={IMG} className="productPicture" />
-                        <img src={IMG} className="productPicture" />
-                        <img src={IMG} className="productPicture" />
+                        <img alt="rotating pictures" src={IMG} className="productPicture" />
+                        <img alt="rotating pictures" src={IMG} className="productPicture" />
+                        <img alt="rotating pictures" src={IMG} className="productPicture" />
+                        <img alt="rotating pictures" src={IMG} className="productPicture" />
                     </Slider>
                 </div>
                 <div className="col-sm-12 col-lg-5">
