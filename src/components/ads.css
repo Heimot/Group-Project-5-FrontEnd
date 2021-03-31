@@ -1,11 +1,11 @@
 .SMALLAD {
-    max-width: 100%;
+    max-width: 290px;
     max-height:  150px;
-    margin: 0 auto;
+    margin: 0;
  }
  
  .BIGAD {
-    max-width: 100%;
+    max-width: 850px;
     max-height:  425px;
     margin: 0 auto;
   
@@ -20,3 +20,16 @@
     width: 100%;
     padding: 0;
  }
+
+ @media only screen and (max-width: 1200px) {
+   .BIGAD {width: 95%;}
+   .SMALLAD {max-width: 95%;}
+}
+
+ @media only screen and (max-width: 767px) {
+    .BIGAD {width: 95%;}
+    .SMALLAD {display: none !important;}
+    .slick-track {display: inline !important;}
+ }
+
+ /* */

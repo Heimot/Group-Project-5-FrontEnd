@@ -42,7 +42,7 @@ function Navigation() {
           />
         </Nav.Link>
         <div className="navBarMain">
-          <FormControl type="text" placeholder="Search" className="mr-sm-2 navigationSearchInput" />
+          <FormControl type="text" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" />
           <Button className="navigationSearchBtn" variant="outline-primary">Search</Button>
         </div>
         <Nav.Link className="navCartAndLogin" eventKey={2} href="#cart">

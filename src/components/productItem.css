@@ -52,6 +52,11 @@
     font-family: 'Rajdhani', sans-serif;
 }
 
+.addToCart:hover {
+    background-color: #1F2833;
+    border-color: #1F2833;
+}
+
 .productCardMoreData {
     font-family: 'Rajdhani', sans-serif;
 }
