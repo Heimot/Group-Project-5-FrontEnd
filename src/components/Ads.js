@@ -59,7 +59,7 @@ function AdSlider() {
                     <img alt="ad" className="SMALLAD" src={AD3}></img>
                 </div>
                 <div>
-                    <img alt="ad" className="SMALLAD" src={AD}></img>
+                    <img alt="ad" className="SMALLAD" src={AD5}></img>
                 </div>
             </Slider>
         </div>
