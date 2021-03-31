@@ -26,10 +26,11 @@
    .SMALLAD {max-width: 95%;}
 }
 
+/* Rikkoo mainokset
  @media only screen and (max-width: 767px) {
     .BIGAD {width: 95%;}
     .SMALLAD {display: none !important;}
     .slick-track {display: inline !important;}
- }
+ } */
 
  /* */
