@@ -10,7 +10,7 @@ export default function Mainos() {
         
         <div className="row">
             <img
-                class="img-fluid"
+                className="img-fluid"
                 src={icon}
                 width="400"
                 height="400"
