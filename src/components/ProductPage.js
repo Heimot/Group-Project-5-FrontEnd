@@ -42,7 +42,6 @@ function ProductPage() {
 
     function reviewStars() {
         let starAmount = [null];
-        console.log(starAmount)
         let i = null;
         for (i = 0; i < Rating; i++) {
             starAmount.push(<FontAwesomeIcon icon={faStar} />)
@@ -53,6 +52,25 @@ function ProductPage() {
             }
         }
         return starAmount;
+    }
+
+    function addToCart(ids) {
+        let id = ids.toString();
+        let cart = [];
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        const found = cart.some(el => el.id === id)
+        if (found) {
+            const allCartValues = cart.filter(item => item.id !== id)
+            const cartValue = cart.filter(item => item.id === id)
+            allCartValues.push({id, amount: cartValue[0].amount + 1 })
+            cart = allCartValues;
+        } else {
+            cart.push({ id, amount: 1 })
+        }
+        let stringCart = JSON.stringify(cart);
+        localStorage.setItem("cart", stringCart);
     }
 
     return (
@@ -72,12 +90,12 @@ function ProductPage() {
                     </Card.Title>
                     <Card.Text className="productCode">Tuotekoodi {ID}</Card.Text>
                     <div>
-                    {reviewStars()}
+                        {reviewStars()}
                     </div>
                     <div className="productPrice">
                         {price}€
                     </div>
-                    <Button className="productPurchaseBtn">
+                    <Button onClick={() => addToCart(ID)} className="productPurchaseBtn">
                         Lisää ostoskoriin
                     </Button>
                     <Button disabled={true} className="productPurchaseBtn">
