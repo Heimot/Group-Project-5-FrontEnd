@@ -1,0 +1,25 @@
+.cartItem {
+    height: auto;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+    margin: 1px 1px 1px 1px;
+}
+
+.cartItemIMG {
+    max-height: 68px;
+}
+
+.cartItemText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartProductItem {
+    display: flex;
+}
+
+.cartProductAmount {
+    width: 75px;
+    text-align: center;
+}
