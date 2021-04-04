@@ -6,6 +6,7 @@ import ProductList from './components/ProductList';
 import BottomLinks from './components/BottomLinks'
 import AdSlider from './components/Ads';
 import ProductPage from './components/ProductPage';
+import Cart from './components/Cart';
 import './App.css'
 import Tietoja from './components/Tietoja';
 
@@ -28,6 +29,9 @@ function App() {
                 </Route>
               </div>
             </div>
+            <Route path="/cart">
+              <Cart />
+            </Route>
             <Route path="/product">
               <ProductPage />
             </Route>
