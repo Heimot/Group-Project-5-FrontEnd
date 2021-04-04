@@ -1,4 +1,4 @@
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5-uus.png";
 import cart from "../img/cart.png";
@@ -21,7 +21,7 @@ function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src={icon}
           width="120"
@@ -45,7 +45,7 @@ function Navigation() {
           <FormControl type="text" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" />
           <Button className="navigationSearchBtn" variant="outline-primary">Search</Button>
         </div>
-        <Nav.Link className="navCartAndLogin" eventKey={2} href="#cart">
+        <Nav.Link className="navCartAndLogin" eventKey={2} href="cart">
           <img
             src={cart}
             width="38"
