@@ -1,9 +1,10 @@
 import { Nav, Navbar, NavDropdown, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5-uus.png";
-import cart from "../img/cart.png";
-import login from "../img/login.png";
 import './navigation.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 function Navigation() {
   let arr = [{ id: "1", ryhma: "Osat", underGroups: ["1", "2", "3"] }, { id: "2", ryhma: "Koneet", underGroups: ["4", "5", "6"] }, { id: "3", ryhma: "Lisätarvikkeet", underGroups: ["Hiiret", "Näppäimistöt"] }, { id: "4", ryhma: "Komponentit", underGroups: ["GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY"] }, { id: "5", ryhma: "Näytöt" }, { id: "6", ryhma: "Gaming" }, { id: "7", ryhma: "TV ja video" }, { id: "8", ryhma: "Kamerat" }, { id: "9", ryhma: "Palvelut" }];
@@ -32,27 +33,15 @@ function Navigation() {
       </Navbar.Brand>
       <Navbar.Toggle className="navCategories" aria-controls="responsive-navbar-nav" />
       <div className="navBarMain">
-        <Nav.Link className="navCartAndLogin" href="#deets">
-          <img
-            src={login}
-            width="38"
-            height="38"
-            className="d-inline-block align-top"
-            alt="Log in"
-          />
-        </Nav.Link>
         <div className="navBarMain">
           <FormControl type="text" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" />
           <Button className="navigationSearchBtn" variant="outline-primary">Search</Button>
         </div>
+        <Nav.Link className="navCartAndLogin" href="#deets">
+          <FontAwesomeIcon icon={faUserCircle} size="3x"/>
+        </Nav.Link>
         <Nav.Link className="navCartAndLogin" eventKey={2} href="cart">
-          <img
-            src={cart}
-            width="38"
-            height="38"
-            className="d-inline-block align-top"
-            alt="Cart"
-          />
+        <FontAwesomeIcon icon={faShoppingCart} size="3x"/>
         </Nav.Link>
       </div>
       <Navbar.Collapse id="responsive-navbar-nav">

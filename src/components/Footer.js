@@ -3,6 +3,8 @@ import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Footer() {
@@ -12,8 +14,8 @@ export default function Footer() {
          <div className="col">
                <h4>Asiakaspalvelu</h4>
                <p>Ma-Pe 9-16</p>
-               <p>+35840123456</p>
-               <p>digifemma@digifemma.fi</p>
+               <p><FontAwesomeIcon icon={faPhone} /> +35840123456</p>
+               <p><FontAwesomeIcon icon={faEnvelope} /> digifemma@digifemma.fi</p>
                <p>Digikatu 3</p>
                <p>90100, Oulu</p>
             </div>

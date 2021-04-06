@@ -2,8 +2,15 @@
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     margin: 0px !important;
+    background-color: #66FCF1;
+    color: black;
+    border-color: #66FCF1;
 }
 
+.navigationSearchBtn:hover {
+    background-color: #45A29E;
+    border-color: #45A29E;
+}
 .navigationSearchInput {
     max-width: 400px;
     border-bottom-right-radius: 0px;
