@@ -4,17 +4,17 @@ import CartItem from './CartItem';
 import Button from 'react-bootstrap/Button';
 
 let values = 0;
+let oldAmount = [];
 
 function Cart() {
     const [cart, setCart] = useState(null);
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState([]);
 
     // Tähän myöhemmin tuotteiden haku ja ne sitten cart.mapataan ostoskoriin!
     useEffect(() => {
         setCart(JSON.parse(localStorage.getItem("cart")));
     }, [])
     
-
     return (
         <div className="cartBody container">
             {cart !== null ?
@@ -34,7 +34,7 @@ function Cart() {
                         </div>
                     </div>
                     {cart.map((item) => {
-                        return (<CartItem key={item.id} item={item} allPrices={(value) => (values = values + value) + setPrice(values)} default={() => setPrice(0) + (values = 0)} />)
+                        return (<CartItem key={item.id} item={item} allPrices={(value) => (values = values + value) + setPrice([...price, 1])} />)
                     })}
                     <div className="cartBottomData">
                         <div>
