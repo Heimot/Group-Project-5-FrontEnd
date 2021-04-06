@@ -15,6 +15,13 @@
 .cartBtn {
     background-color: #66FCF1;
     border: 1px solid #66FCF1;
+    color: black;
+}
+
+.cartBtn:hover {
+    background-color: #45A29E;
+    border: 1px solid #45A29E;
+    color: white;
 }
 
 .cartBottomData {

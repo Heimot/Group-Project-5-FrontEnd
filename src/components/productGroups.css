@@ -29,6 +29,11 @@
     color: black;
 }
 
+.groupsButton:active {
+    background-color: #45A29E;
+    color: white;
+}
+
 .productGroupsMain {
     width: 200px;
     border: solid 1px gray;
@@ -59,4 +64,9 @@
     background-color: #66FCF1;
     text-decoration: none;
     color: black;
+}
+
+.subGroupCol:active {
+    background-color: #45A29E;
+    color: white;
 }

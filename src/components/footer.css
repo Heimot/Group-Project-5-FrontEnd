@@ -18,3 +18,8 @@ h4 {
 .ikonit:hover {
    color: #45A29E;
 }
+
+.viiva {
+   border: 4px solid #66FCF1;
+   margin: 30px -15px 20px;
+}

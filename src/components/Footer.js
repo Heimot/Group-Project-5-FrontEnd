@@ -10,6 +10,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 export default function Footer() {
    return (
       <footer className="bottomi container-fluid">
+         <hr className="viiva"></hr>
          <div className="row">
          <div className="col">
                <h4>Asiakaspalvelu</h4>
