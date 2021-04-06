@@ -27,6 +27,11 @@
 .navCartAndLogin {
     padding: 0;
     height: 38px;
+    color: #66FCF1;
+}
+
+.navCartAndLogin:hover {
+    color: #45A29E;
 }
 
 

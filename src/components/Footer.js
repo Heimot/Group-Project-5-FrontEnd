@@ -28,10 +28,10 @@ export default function Footer() {
                <p>Tietosuojaseloste</p>
             </div>
             <div className="col">
-               <a href="https://www.facebook.com/" target="_blank"><FontAwesomeIcon icon={faFacebook} size="6x" /></a> 
-               <a href="https://www.twitter.com/" target="_blank"><FontAwesomeIcon icon={faTwitter} size="6x"/></a>
-               <a href="https://www.youtube.com/" target="_blank"><FontAwesomeIcon icon={faYoutube} size="6x"/></a>
-               <a href="https://www.instagram.com/" target="_blank"><FontAwesomeIcon icon={faInstagram} size="6x"/></a>
+               <a className="ikonit" href="https://www.facebook.com/" target="_blank"><FontAwesomeIcon icon={faFacebook} size="6x" /></a> 
+               <a className="ikonit" href="https://www.twitter.com/" target="_blank"><FontAwesomeIcon icon={faTwitter} size="6x"/></a>
+               <a className="ikonit" href="https://www.youtube.com/" target="_blank"><FontAwesomeIcon icon={faYoutube} size="6x"/></a>
+               <a className="ikonit" href="https://www.instagram.com/" target="_blank"><FontAwesomeIcon icon={faInstagram} size="6x"/></a>
             </div>
          </div>
       </footer>

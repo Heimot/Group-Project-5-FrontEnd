@@ -10,11 +10,11 @@ h4 {
    color:whitesmoke;
 }
 
-a {
+.ikonit {
    padding: 10px;
    color: #66FCF1;
 }
 
-a:hover {
+.ikonit:hover {
    color: #45A29E;
 }
