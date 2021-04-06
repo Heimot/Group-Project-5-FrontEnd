@@ -5,3 +5,16 @@
    background-color: #0B0C10;
    color: #66FCF1;
 }
+
+h4 {
+   color:whitesmoke;
+}
+
+a {
+   padding: 10px;
+   color: #66FCF1;
+}
+
+a:hover {
+   color: #45A29E;
+}
