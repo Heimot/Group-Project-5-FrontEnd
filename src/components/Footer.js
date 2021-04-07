@@ -21,12 +21,14 @@ export default function Footer() {
                <p>90100, Oulu</p>
             </div>
             <div className="col">
+            <ul>
                <h4>Info</h4>
-               <p>Yhteystiedot</p>
-               <p>Palvelut ja huolto</p>
-               <p>UKK</p>
-               <p>Yritysmyynti</p>
-               <p>Tietosuojaseloste</p>
+               <li><a className="linkText" href="">Yhteystiedot</a></li>
+               <li><a className="linkText" href="service">Palvelut ja huolto</a></li>
+               <li><a className="linkText" href="">UKK</a></li>
+               <li><a className="linkText" href="">Yritysmyynti</a></li>
+               <li><a className="linkText" href="">Tietosuojaseloste</a></li>
+               </ul>
             </div>
             <div className="col">
                <a className="ikonit" href="https://www.facebook.com/" target="_blank"><FontAwesomeIcon icon={faFacebook} size="6x" /></a> 

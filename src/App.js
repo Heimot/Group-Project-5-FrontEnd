@@ -9,6 +9,7 @@ import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
 import './App.css'
 import Tietoja from './components/Tietoja';
+import Service from "./components/Service";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/">
               <ProductList />
+            </Route>
+            <Route path="/service">
+              <Service />
             </Route>
             <Route exact path="/">
               <BottomLinks />

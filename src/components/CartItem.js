@@ -5,21 +5,27 @@ import './CartItem.css';
 function CartItem(props) {
     const [amount, setAmount] = useState(props.item.amount)
     /*kaikki nämä valuet tulevat myöhemmin fetchin avulla propsejen kautta!*/
+    // vaihda kaikki 499 myöhemmin fetchin hintoihin!!!!!!!!!!!!!!
 
     useEffect(() => {
         Prices();
     }, [])
 
     function Prices() {
-        props.allPrices(amount * 499);
+        props.allPrices(499 * amount);
     }
 
-    function onePrice() {
-        props.allPrices(499)
+    function onePrice(oldValue, value) {
+        if(oldValue[0].amount < value) {
+            props.allPrices(499)
+        } else {
+            props.allPrices(-499)
+        }
+       
     }
 
     function Price() {
-        let price = 499.0 * amount;
+        let price = 499 * amount;
         return `${price} €`;
     }
 
@@ -30,11 +36,12 @@ function CartItem(props) {
         if (localStorage.getItem("cart")) {
             cart = JSON.parse(localStorage.getItem("cart"));
         }
+        let oldValue = cart.filter(item => item.id === id)
         const found = cart.some(el => el.id === id)
         if (found) {
             const allCartValues = cart.filter(item => item.id !== id)
             if (value > 0) {
-                allCartValues.push({ id, amount: value })
+                allCartValues.push({ id, amount: parseInt(value) })
             } else {
                 document.getElementById(id).remove();
             }
@@ -42,7 +49,7 @@ function CartItem(props) {
         }
         let stringCart = JSON.stringify(cart);
         localStorage.setItem("cart", stringCart);
-        onePrice();
+        onePrice(oldValue, value);
     }
 
     return (
@@ -54,7 +61,7 @@ function CartItem(props) {
                 </div>
             </div>
             <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
-                <input value={amount} type="number" onChange={(e) => setAmount(e.target.value) + changeAmount(e.target.value)} className="cartProductAmount"></input>
+                <input min={0} value={amount} type="number" onChange={(e) => setAmount(e.target.value) + changeAmount(e.target.value)} className="cartProductAmount"></input>
             </div>
             <div className="cartItemText col-3 col-sm-3 col-md-2 col-xl-2">
                 499.0 €

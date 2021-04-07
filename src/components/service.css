@@ -1,0 +1,51 @@
+.head {
+    font-size: 4rem;
+}
+.otsikko {
+    background-color: teal;
+    color: white;
+}
+
+.lista {
+    background-color: teal;
+    margin-bottom: 2em;
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.teksti {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: teal;
+    font-family: 'Roboto';
+}
+.priceBadge {
+    font-size: 1.3em;
+    background-color: teal;
+    float: right;
+    color: white;
+}
+
+@media screen and (max-width: 991px) {
+    .lista {
+        width: 40rem !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .lista {
+        width: 30rem !important;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .lista {
+        width: 25rem !important;
+    }
+}
+
+@media screen and (max-width: 433px) {
+    .lista {
+        width: 20rem !important;
+    }
+}
