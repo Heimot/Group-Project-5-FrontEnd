@@ -1,16 +1,16 @@
 import Card from 'react-bootstrap/Card';
-import "./toimipisteet.css";
+import "./asiakaspalvelu.css";
 
-import img1 from "../img/espoo.jpg";
-import img2 from "../img/helsinki.jpg";
-import img3 from "../img/oulu.jpg";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import img2 from "../img/conference-room-768441_640.jpg";
+import img1 from "../img/support.jpg";
+import img3 from "../img/paakonttori.jpg";
 
 
 
-export default function Toimipisteet() {
+
+
+
+export default function Asiakaspalvelu() {
 
     return (
         <div className="container-fluid d-flex justify-content-center">
@@ -18,32 +18,24 @@ export default function Toimipisteet() {
                 <div className="col-sm-12 col-md-6 col-lg-4">
                     <Card >
                         <Card.Title className="toimiPisteOtsikko">
-                            Espoon myymälä:
+                        Asiakaspalvelu:
                     </Card.Title>
                     <div className="toimKuvat">
                     <img alt="ad" className="toimKuvat" src={img1}></img>
                 </div>
                         <Card.Text className="toimiPisteTeksti">
-                            <p>
-                                Digifemma - Espoon toimipiste
-                                <p> Osoite:</p>
-                        </p>
-                            <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 1, Espoo, 02222
-                        </p>
+
                             <p>
                                 Puhelin:
-                                020 1234 567
+                                020 1234 999
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti"> digifemma.espoo@gmail.com </a></p>
+                               <p> <a className="sposti"> digifemma.asiakaspalvelu@gmail.com </a></p>
                         </p>
 
                         <p>Aukioloajat:</p>
-                        <p>Ma-Pe 10:00 - 18:00</p>
-                        <p>La-Su 10:00 - 14:00</p>
-
+                        <p>Ma-Pe 9:00 - 16:00</p>
                         </Card.Text>
                     </Card>
                 </div>
@@ -52,31 +44,23 @@ export default function Toimipisteet() {
                     <Card>
 
                         <Card.Title className="toimiPisteOtsikko">
-                            Helsingin myymälä:
+                        Yritysmyynti:
                     </Card.Title>
                     <div>
                     <img alt="ad" className="toimKuvat" src={img2}></img>
                 </div>
                         <Card.Text className="toimiPisteTeksti">
-                            <p>
-                                Digifemma - Helsingin toimipiste
-                                <p> Osoite:</p>
-                        </p>
-                            <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 2, Helsinki, 01111
-                        </p>
+
                             <p>
                                 Puhelin:
-                                020 2222 333
+                                020 2222 568
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti">  digifemma.helsinki@gmail.com </a></p> 
+                               <p> <a className="sposti">  digifemma.yritysmyynti@gmail.com </a></p> 
                         </p>
                         <p>Aukioloajat:</p>
-                        <p>Ma-Pe 10:00 - 18:00</p>
-                        <p>La-Su 10:00 - 14:00</p>
-
+                        <p>Ma-Pe 9:00 - 16:00</p>
                         </Card.Text>
                     </Card>
 
@@ -85,30 +69,23 @@ export default function Toimipisteet() {
                 <div className="col-sm-12 col-md-6 col-lg-4">
                     <Card>
                         <Card.Title className="toimiPisteOtsikko">
-                            Oulun myymälä:
+                        Pääkonttori:
                     </Card.Title>
                     <div>
                     <img alt="ad" className="toimKuvat" src={img3}></img>
                 </div>
                         <Card.Text className="toimiPisteTeksti">
-                            <p>
-                                Digifemma - Oulun toimipiste
-                               <p> Osoite:</p>
-                        </p>
-                            <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 3, Oulu, 90000
-                        </p>
+
                             <p>
                                 Puhelin:
-                                020 7777 444
+                                020 7777 456
                         </p>
                             <p>
                                 Sähköposti:
-                                <p><a className="sposti"> digifemma.oulu@gmail.com </a></p>
+                                <p><a className="sposti"> digifemma.paakonttori@gmail.com </a></p>
                         </p>
                         <p>Aukioloajat:</p>
-                        <p>Ma-Pe 10:00 - 18:00</p>
-                        <p>La-Su 10:00 - 14:00</p>
+                        <p>Ma-Pe 9:00 - 16:00</p>
                         </Card.Text>
                     </Card>
                 </div>

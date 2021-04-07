@@ -6,19 +6,30 @@
 
 
 .card-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     padding: 0.4rem 1.9rem;
+      
 }
 
 .Card.Title {
     text-align: center;
+    overflow: hidden;
+
 }
 
 .toimKuvat {
-    max-width: 327px;
-    max-height:  425px;
-  
+    max-width: 347px;
+    max-height:  347px;
+    overflow: hidden;
+    min-width: 347px;
+    min-height: 347px;
+    vertical-align: middle;
+
+
+
 }
+
+
 
 

@@ -9,7 +9,7 @@ import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
 import './App.css'
 import Tietoja from './components/Tietoja';
-import Service from "./components/Service";
+import Contacts from "./components/YhteystiedotSivu.js";
 
 function App() {
   return (
@@ -33,14 +33,14 @@ function App() {
             <Route path="/cart">
               <Cart />
             </Route>
+            <Route path="/YhteystiedotSivu">
+              <Contacts />
+            </Route>
             <Route path="/product">
               <ProductPage />
             </Route>
             <Route exact path="/">
               <ProductList />
-            </Route>
-            <Route path="/service">
-              <Service />
             </Route>
             <Route exact path="/">
               <BottomLinks />
