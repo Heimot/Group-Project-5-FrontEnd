@@ -16,7 +16,7 @@ export default function Otsikko() {
             </div>
             <pre></pre>
             <div>
-                <h1>Myymälöiden yhteystiedot</h1>
+                <h1>Myymälöiden yhteystiedot ja aukioloajat</h1>
             </div>
             <pre></pre>
             <div className="MyyOtsikko">

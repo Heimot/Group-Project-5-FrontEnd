@@ -5,8 +5,8 @@ import img1 from "../img/espoo.jpg";
 import img2 from "../img/helsinki.jpg";
 import img3 from "../img/oulu.jpg";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -18,7 +18,7 @@ export default function Toimipisteet() {
                 <div className="col-sm-12 col-md-6 col-lg-4">
                     <Card >
                         <Card.Title className="toimiPisteOtsikko">
-                            Espoon myymälä:
+                            Espoon myymälä
                     </Card.Title>
                     <div className="toimKuvat">
                     <img alt="ad" className="toimKuvat" src={img1}></img>
@@ -37,7 +37,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti"> digifemma.espoo@gmail.com </a></p>
+                               <p> <a className="sposti"> digifemma.espoo@digifemma.com </a></p>
                         </p>
 
                         <p>Aukioloajat:</p>
@@ -52,7 +52,7 @@ export default function Toimipisteet() {
                     <Card>
 
                         <Card.Title className="toimiPisteOtsikko">
-                            Helsingin myymälä:
+                            Helsingin myymälä
                     </Card.Title>
                     <div>
                     <img alt="ad" className="toimKuvat" src={img2}></img>
@@ -71,7 +71,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti">  digifemma.helsinki@gmail.com </a></p> 
+                               <p> <a className="sposti">  digifemma.helsinki@digifemma.com </a></p> 
                         </p>
                         <p>Aukioloajat:</p>
                         <p>Ma-Pe 10:00 - 18:00</p>
@@ -85,7 +85,7 @@ export default function Toimipisteet() {
                 <div className="col-sm-12 col-md-6 col-lg-4">
                     <Card>
                         <Card.Title className="toimiPisteOtsikko">
-                            Oulun myymälä:
+                            Oulun myymälä
                     </Card.Title>
                     <div>
                     <img alt="ad" className="toimKuvat" src={img3}></img>
@@ -104,7 +104,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                                <p><a className="sposti"> digifemma.oulu@gmail.com </a></p>
+                                <p><a className="sposti"> digifemma.oulu@digifemma.com </a></p>
                         </p>
                         <p>Aukioloajat:</p>
                         <p>Ma-Pe 10:00 - 18:00</p>
