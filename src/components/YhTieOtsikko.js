@@ -21,8 +21,8 @@ export default function Otsikko() {
             <pre></pre>
             <div className="MyyOtsikko">
                 <p>Meille DigiFemmalla on tällä hetkelle toimintaa kolmessa eri kaupungissa verkkokaupan lisäksi. Reklamaatio
-                tilanteissa toivomme että otat aina ensisijaisesti yhteyttä liikkeeseen missä asiot, jos taas olet asioinut
-                verkkokaupassamme niin ota yhteyttä asiakaspalveluun.</p>
+                tilanteissa toivomme että otat aina ensisijaisesti yhteyttä liikkeeseen missä asioit, jos taas olet asioinut
+                verkkokaupassamme niin otathan yhteyttä asiakaspalveluun.</p>
             </div>
         </div >
 
