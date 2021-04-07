@@ -4,13 +4,12 @@ import CartItem from './CartItem';
 import Button from 'react-bootstrap/Button';
 
 let values = 0;
-let oldAmount = [];
 
 function Cart() {
     const [cart, setCart] = useState(null);
     const [price, setPrice] = useState([]);
 
-    // Tähän myöhemmin tuotteiden haku ja ne sitten cart.mapataan ostoskoriin!
+    // Tähän myöhemmin tuotteiden select haku (fetch) ja ne sitten cart.mapataan ostoskoriin!
     useEffect(() => {
         setCart(JSON.parse(localStorage.getItem("cart")));
     }, [])

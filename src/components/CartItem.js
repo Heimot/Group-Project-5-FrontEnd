@@ -17,9 +17,12 @@ function CartItem(props) {
 
     function onePrice(oldValue, value) {
         if(oldValue[0].amount < value) {
-            props.allPrices(499)
+            props.allPrices(499 * (value - oldValue[0].amount))
         } else {
-            props.allPrices(-499)
+            if(value < 0) {
+                value = 0;
+            }
+            props.allPrices(-499 * (oldValue[0].amount - value))
         }
        
     }
@@ -43,7 +46,7 @@ function CartItem(props) {
             if (value > 0) {
                 allCartValues.push({ id, amount: parseInt(value) })
             } else {
-                document.getElementById(id).remove();
+               document.getElementById(id).remove();
             }
             cart = allCartValues;
         }
