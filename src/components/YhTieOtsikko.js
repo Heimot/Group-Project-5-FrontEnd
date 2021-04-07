@@ -10,7 +10,7 @@ export default function Otsikko() {
             </div>
             <pre></pre>
             <div className="covidInfo">
-                <p>DigiFemma on varautunut covid-19 virukseen ja noudattaa virainomaisten käskyjä. Asiakkaidemme ja henkilökuntamme turvallisuus on
+                <p>DigiFemma on varautunut koronavirukseen ja noudattaa viranomaisten käskyjä. Asiakkaidemme ja henkilökuntamme turvallisuus on
                      toiminnassamme etusijalla ja koronaviruksen aiheuttamassa poikkeustilanteessa on välttämätöntä tehdä kaikki voitava
                       koronaviruksen leviämisen ehkäisemiseksi. </p>
             </div>
@@ -20,9 +20,9 @@ export default function Otsikko() {
             </div>
             <pre></pre>
             <div className="MyyOtsikko">
-                <p>Meillä DigiFemmalla on tällä hetkelle toimintaa kolmessa eri kaupungissa verkkokaupan lisäksi. Reklamaatio
-                tilanteissa toivomme että otat aina ensisijaisesti yhteyttä liikkeeseen missä asioit, jos taas olet asioinut
-                verkkokaupassamme niin otathan yhteyttä asiakaspalveluun.</p>
+                <p>Meillä DigiFemmalla on tällä hetkellä toimintaa kolmessa eri kaupungissa verkkokaupan lisäksi. Reklamaatiotilanteissa
+                     toivomme, että otat aina ensisijaisesti yhteyttä liikkeeseen, jossa asioit. Jos olet asioinut
+                verkkokaupassamme, otathan yhteyttä asiakaspalveluumme.</p>
             </div>
         </div >
 
