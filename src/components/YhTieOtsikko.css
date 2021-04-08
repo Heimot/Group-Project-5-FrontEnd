@@ -1,8 +1,8 @@
-h1 {
+.otsikko {
     text-align: center;
 }
 
-p {
+.tietoja {
     font-size: x-large;
     text-align: middle;
 }
