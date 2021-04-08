@@ -10,6 +10,10 @@ import Cart from './components/Cart';
 import './App.css'
 import Tietoja from './components/Tietoja';
 import Contacts from "./components/YhteystiedotSivu.js";
+import YritysMyynti from './components//YritysMyynti';
+import Service from "./components/Service";
+import Ukk from "./components/Ukk";
+import Tietosuoja from "./components/Tietosuoja";
 
 function App() {
   return (
@@ -33,11 +37,23 @@ function App() {
             <Route path="/cart">
               <Cart />
             </Route>
-            <Route path="/YhteystiedotSivu">
+            <Route path="/info/YhteystiedotSivu">
               <Contacts />
+            </Route>
+            <Route path="/info/YritysMyynti">
+              <YritysMyynti />
             </Route>
             <Route path="/product">
               <ProductPage />
+            </Route>
+            <Route path="/info/service">
+              <Service />
+            </Route>
+            <Route path="/info/ukk">
+              <Ukk />
+            </Route>
+            <Route path="/info/tietosuoja">
+              <Tietosuoja />
             </Route>
             <Route exact path="/">
               <ProductList />

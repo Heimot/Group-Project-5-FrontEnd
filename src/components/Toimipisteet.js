@@ -29,7 +29,8 @@ export default function Toimipisteet() {
                                 <p> Osoite:</p>
                         </p>
                             <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 1, Espoo, 02222
+                            <a className="lokaatio" href="https://www.google.fi/maps/place/L%C3%A4ntinen+teollisuuskatu+1,+02920+Espoo/@60.2742587,24.7559183,17z/data=!3m1!4b1!4m5!3m4!1s0x468df0d5a3abf89f:0x440158a4d4b6fc82!8m2!3d60.2742561!4d24.758107" target="_blank">
+                                 <FontAwesomeIcon icon={ faMapMarkerAlt} size="lg"  /></a> Teollisuuskatu 1, Espoo, 02222
                         </p>
                             <p>
                                 Puhelin:
@@ -37,7 +38,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti"> digifemma.espoo@digifemma.com </a></p>
+                               <p> <a className="sposti"> digifemma.espoo<p>@digifemma.com</p> </a></p>
                         </p>
 
                         <p>Aukioloajat:</p>
@@ -63,7 +64,8 @@ export default function Toimipisteet() {
                                 <p> Osoite:</p>
                         </p>
                             <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 2, Helsinki, 01111
+                            <a className="lokaatio" href="https://www.google.fi/maps/place/Teollisuuskatu+2,+00510+Helsinki/@60.1899698,24.9568864,17z/data=!3m1!4b1!4m5!3m4!1s0x46920978b918bfcf:0x4a1dd9eb1ab6216e!8m2!3d60.1899672!4d24.9590751" target="_black"> 
+                            <FontAwesomeIcon icon={ faMapMarkerAlt} size="lg" /></a> Teollisuuskatu 2, Helsinki, 01111
                         </p>
                             <p>
                                 Puhelin:
@@ -71,7 +73,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti">  digifemma.helsinki@digifemma.com </a></p> 
+                               <p> <a className="sposti">  digifemma.helsinki<p>@digifemma.com</p> </a></p> 
                         </p>
                         <p>Aukioloajat:</p>
                         <p>Ma-Pe 10:00 - 18:00</p>
@@ -96,7 +98,8 @@ export default function Toimipisteet() {
                                <p> Osoite:</p>
                         </p>
                             <p>
-                            <a className="lokaatio"> <FontAwesomeIcon icon={ faMapMarkerAlt} /></a> Teollisuuskatu 3, Oulu, 90000
+                            <a className="lokaatio" href="https://www.google.fi/maps/place/Oulu/@65.2038581,24.8824593,9z/data=!3m1!4b1!4m8!1m2!2m1!1sTeollisuuskatu+3,+Oulu,+90000!3m4!1s0x468032a8c02185c1:0x8bb02d322b12e97d!8m2!3d65.0120888!4d25.4650772" target="_black"> 
+                            <FontAwesomeIcon icon={ faMapMarkerAlt} size="lg" /></a> Teollisuuskatu 3, Oulu, 90000
                         </p>
                             <p>
                                 Puhelin:
@@ -104,7 +107,7 @@ export default function Toimipisteet() {
                         </p>
                             <p>
                                 Sähköposti:
-                                <p><a className="sposti"> digifemma.oulu@digifemma.com </a></p>
+                                <p><a className="sposti"> digifemma.oulu<p>@digifemma.com</p> </a></p>
                         </p>
                         <p>Aukioloajat:</p>
                         <p>Ma-Pe 10:00 - 18:00</p>

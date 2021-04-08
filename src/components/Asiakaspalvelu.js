@@ -29,7 +29,7 @@ export default function Asiakaspalvelu() {
 
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti"> digifemma.asiakaspalvelu@digifemma.com </a></p>
+                               <p> <a className="sposti"> digifemma.asiakaspalvelu<p>@digifemma.com</p></a></p>
                         </p>
                         <p>
                                 Puhelin:
@@ -54,7 +54,7 @@ export default function Asiakaspalvelu() {
                         <Card.Text className="toimiPisteTeksti">
                             <p>
                                 Sähköposti:
-                               <p> <a className="sposti">  digifemma.yritysmyynti@digifemma.com </a></p> 
+                               <p> <a className="sposti">  digifemma.yritysmyynti<p>@digifemma.com</p></a></p> 
                         </p>
                         
                         <p>
@@ -81,7 +81,7 @@ export default function Asiakaspalvelu() {
 
                             <p>
                                 Sähköposti:
-                                <p><a className="sposti"> digifemma.paakonttori@digifemma.com </a></p>
+                                <p><a className="sposti"> digifemma.paakonttori<p>@digifemma.com</p> </a></p>
                         </p>
                         <p>
                                 Puhelin:

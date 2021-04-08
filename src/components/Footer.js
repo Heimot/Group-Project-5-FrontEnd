@@ -23,11 +23,11 @@ export default function Footer() {
             <div className="col">
             <ul>
                <h4>Info</h4>
-               <li><a className="linkText" href="">Yhteystiedot</a></li>
-               <li><a className="linkText" href="service">Palvelut ja huolto</a></li>
-               <li><a className="linkText" href="">UKK</a></li>
-               <li><a className="linkText" href="">Yritysmyynti</a></li>
-               <li><a className="linkText" href="">Tietosuojaseloste</a></li>
+               <li><a className="linkText" href="/info/YhteystiedotSivu">Yhteystiedot</a></li>
+               <li><a className="linkText" href="/info/service">Palvelut ja huolto</a></li>
+               <li><a className="linkText" href="/info/ukk">UKK</a></li>
+               <li><a className="linkText" href="/info/YritysMyynti">Yritysmyynti</a></li>
+               <li><a className="linkText" href="/info/tietosuoja">Tietosuojaseloste</a></li>
                </ul>
             </div>
             <div className="col">
