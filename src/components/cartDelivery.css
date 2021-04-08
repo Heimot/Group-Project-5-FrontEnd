@@ -1,0 +1,50 @@
+.cartDeliveryList {
+    list-style: none;
+    border: gray solid 1px;
+    border-radius: 6px;
+    padding: 0;
+}
+
+.cartDeliveryList li:not(:last-child) {
+    border-bottom: gray solid 1px;
+}
+
+.deliveryCost {
+    display: flex;
+    background-color: green;
+    width: 70px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 11px;
+    border-radius: 3px;
+}
+
+.cartDeliveryText {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+}
+
+.cartDeliveryRadio {
+    display: flex;
+    
+}
+
+.cartDelivery {
+    margin: 10px;
+}
+
+.cartDeliveryLabel {
+    display: flex;
+    font-weight: bold;
+    font-size: 13px;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.cartDeliveryTextArea {
+    margin-left: 20px;
+}
