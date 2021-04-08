@@ -10,6 +10,7 @@ import Cart from './components/Cart';
 import './App.css'
 import Tietoja from './components/Tietoja';
 import Contacts from "./components/YhteystiedotSivu.js";
+import YritysMyynti from './components//YritysMyynti';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/YhteystiedotSivu">
               <Contacts />
+            </Route>
+            <Route path="/YritysMyynti">
+              <YritysMyynti />
             </Route>
             <Route path="/product">
               <ProductPage />
