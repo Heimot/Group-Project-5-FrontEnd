@@ -1,6 +1,6 @@
 .cartText {
     padding: 10px;
-    margin-top: 4px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .cartTextCart {
@@ -28,4 +28,50 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+}
+
+.cartSteps {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.cartStepButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+    width: 180px !important;
+    height: 25px;
+    user-select: none;
+}
+
+.cartStepButtonActive {
+    background-color: #66FCF1;
+}
+
+.cartStepButton:hover {
+    background-color: grey;
+}
+
+.cartNext {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cartLast {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cartLastNext {
+    display: flex;
+}
+
+.cartForms {
+    border: black solid 1px;
+    border-radius: 5px;
 }
