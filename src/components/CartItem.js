@@ -16,15 +16,15 @@ function CartItem(props) {
     }
 
     function onePrice(oldValue, value) {
-        if(oldValue[0].amount < value) {
+        if (oldValue[0].amount < value) {
             props.allPrices(499 * (value - oldValue[0].amount))
         } else {
-            if(value < 0) {
+            if (value < 0) {
                 value = 0;
             }
             props.allPrices(-499 * (oldValue[0].amount - value))
         }
-       
+
     }
 
     function Price() {
@@ -46,7 +46,7 @@ function CartItem(props) {
             if (value > 0) {
                 allCartValues.push({ id, amount: parseInt(value) })
             } else {
-               document.getElementById(id).remove();
+                document.getElementById(id).remove();
             }
             cart = allCartValues;
         }
@@ -63,9 +63,13 @@ function CartItem(props) {
                     BenQ 23,8" GW2475H, Full HD -monitori, musta (Tarjous! Norm. 139€!)
                 </div>
             </div>
-            <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
+            {props.pos !== 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
                 <input min={0} value={amount} type="number" onChange={(e) => setAmount(e.target.value) + changeAmount(e.target.value)} className="cartProductAmount"></input>
-            </div>
+            </div> : null}
+
+            {props.pos === 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
+                <div>{amount}</div>
+            </div> : null}
             <div className="cartItemText col-3 col-sm-3 col-md-2 col-xl-2">
                 499.0 €
             </div>
