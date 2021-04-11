@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from './components/Navigation';
 import ProductGroups from './components/ProductGroups';
@@ -16,6 +17,12 @@ import Ukk from "./components/Ukk";
 import Tietosuoja from "./components/Tietosuoja";
 
 function App() {
+
+  useEffect(() => {
+    if(localStorage.getItem("cart") === null) {
+      localStorage.setItem("cart", "[]");
+    }
+  }, [])
   return (
     <Router>
       <div className="middleSmol container">
