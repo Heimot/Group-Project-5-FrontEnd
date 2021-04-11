@@ -1,11 +1,30 @@
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import './CartForm.css';
 
 function CartForm(props) {
+    const [credentials, setCredentials] = useState({ firstName: "", lastName: "", address: "", zip: "", municipality: "", email: "", phoneNumber: "", orderInfo: "" });
+
+    useEffect(() => {
+        try {
+            const data = JSON.parse(sessionStorage.getItem("credentials"));
+            if (data !== null) {
+                setCredentials(data)
+            }
+        } catch (err) {
+            sessionStorage.clear("credentials");
+        }
+    }, [])
 
     function orderData(e) {
         e.preventDefault();
+        sessionStorage.setItem("credentials", JSON.stringify(credentials));
         props.next()
+    }
+
+    const onChangeValue = (e) => {
+        const { value, id } = e.target;
+        setCredentials({ ...credentials, [id]: value });
     }
 
     return (
@@ -14,33 +33,37 @@ function CartForm(props) {
                 <div className="col-lg-6 col-sm-12">
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="firstName">Etunimi</label>
-                        <input className="cartFormInputData" required type="text" id="firstName" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.firstName} required type="text" id="firstName" />
                     </div>
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="lastName">Sukunimi</label>
-                        <input className="cartFormInputData" required type="text" id="lastName" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.lastName} required type="text" id="lastName" />
                     </div>
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="address">Osoite</label>
-                        <input className="cartFormInputData" required type="text" id="address" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.address} required type="text" id="address" />
                     </div>
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="ZIP">Postinumero</label>
-                        <input className="cartFormInputData" required type="number" id="ZIP" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.zip} required type="text" id="zip" />
                     </div>
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="municipality">Kunta</label>
-                        <input className="cartFormInputData" required type="text" id="municipality" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.municipality} required type="text" id="municipality" />
                     </div>
                 </div>
                 <div className="col-lg-6 col-sm-12">
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="email">Sähköposti</label>
-                        <input className="cartFormInputData" required type="email" id="email" />
+                        <input onChange={onChangeValue} className="cartFormInputData" value={credentials.email} required type="email" id="email" />
                     </div>
                     <div className="cartFormInput">
                         <label className="cartFormLabel" htmlFor="phoneNumber">Puhelinnumero</label>
-                        <input className="cartFormInputData" required type="number" id="phoneNumber" />
+                        <input onChange={onChangeValue} className="cartFormInputData cartFormInputNumberData" value={credentials.phoneNumber} required type="text" id="phoneNumber" />
+                    </div>
+                    <div className="cartFormInput">
+                        <label className="cartFormLabel" htmlFor="orderInfo">Tilauksen lisätiedot</label>
+                        <textarea onChange={onChangeValue} className="cartFormInputData cartFormInputNumberData" value={credentials.orderInfo} type="textarea" id="orderInfo" />
                     </div>
                     <div className="cartFormInput">
                         <input required type="checkbox" id="terms" />
