@@ -1,0 +1,51 @@
+.aloitus {
+    margin-top: 25px;
+}
+.oikeaReunaOtsikko {
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Roboto';
+}
+.vasenReunaOtsikko {
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Roboto';
+}
+.oikeaReuna {
+    font-size: large;
+    margin-left: 10px;
+    text-align: center;
+}
+.vasenReuna {
+    font-size: large;
+    margin-left: 10px;
+
+}
+.punaPilkku {
+    color: red;
+    font-size: x-large;
+}
+ .LuontiNappi {
+    font-size: xx-large;
+ }
+
+ .vasenReunaEkaKappale {
+    text-align: center;
+    margin-top: 60px;
+    font-size: x-large;
+    font-family: 'Roboto';
+}
+
+.yritysMyynninKuva {
+    max-width: 537px;
+    max-height:  380px;
+    overflow: auto;
+    min-width: 347px;
+    min-height: 347px;
+}
+.toimiPisteTekstiy {
+    font-family: 'Roboto';
+    font-size: large;
+
+}
+

@@ -1,0 +1,31 @@
+.cartFormInput {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px 10px 0px;
+}
+
+.cartFormInputData {
+    margin-left: 10px;
+    width: 250px;
+}
+
+.cartFormLabel {
+    display: flex;
+    font-weight: bold;
+    font-size: 13px;
+    align-items: center;
+}
+
+.cartNext {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cartLast {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cartLastNext {
+    display: flex;
+}
