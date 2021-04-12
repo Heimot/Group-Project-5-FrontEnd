@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
-import Dialog from './Dialog';
 import "./productGroups.css";
 
-function ProductGroups() {
+function InfoGroups() {
     const [isOpen, setisOpen] = useState(false);
-    const [dialogData, setdialogData] = useState(null);
     const [catalog, setcatalog] = useState("");
     const [width, setwidth] = useState(getWidth());
-    let arr = [{ id: "1", ryhma: "Yhteystiedot"}, { id: "2", ryhma: "Palvelut ja huolto"}, { id: "3", ryhma: "UKK"}, { id: "4", ryhma: "Yritysmyynti"}, { id: "5", ryhma: "Tietosuojaseloste" }];
+    let arr = [{ id: "1", ryhma: "Yhteystiedot", osoite: "YhteystiedotSivu"}, { id: "2", ryhma: "Palvelut ja huolto", osoite: "service"}, { id: "3", ryhma: "UKK", osoite: "UKK"}, { id: "4", ryhma: "Yritysmyynti", osoite: "yritysmyynti"}, { id: "5", ryhma: "Tietosuojaseloste", osoite: "tietosuoja" }];
 
     function getWidth() {
         const { innerWidth: width } = window;
@@ -33,7 +31,7 @@ function ProductGroups() {
                     <div className="groups">
                         {arr.map(item => {
                             return (
-                                <a href={`/info/${item.ryhma}`} onMouseEnter={() => setcatalog(item.ryhma) + setisOpen(true)} onMouseLeave={() => setisOpen(false)} className="groupsButton" key={item.ryhma}>{item.ryhma}</a>
+                                <a href={`/info/${item.osoite}`} onMouseEnter={() => setcatalog(item.ryhma) + setisOpen(true)} onMouseLeave={() => setisOpen(false)} className="groupsButton" key={item.ryhma}>{item.ryhma}</a>
                             )
                         })}
                     </div>
@@ -49,4 +47,4 @@ function ProductGroups() {
 
 }
 
-export default ProductGroups;
+export default InfoGroups;
