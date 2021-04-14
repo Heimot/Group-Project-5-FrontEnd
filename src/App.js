@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from './components/Navigation';
 import ProductGroups from './components/ProductGroups';
@@ -15,11 +15,13 @@ import YritysMyynti from './components//YritysMyynti';
 import Service from "./components/Service";
 import Ukk from "./components/Ukk";
 import Tietosuoja from "./components/Tietosuoja";
+import CartAlert from './components/CartAlert';
 
 function App() {
+  const [newItem, setItem] = useState(null);
 
   useEffect(() => {
-    if(localStorage.getItem("cart") === null) {
+    if (localStorage.getItem("cart") === null) {
       localStorage.setItem("cart", "[]");
     }
   }, [])
@@ -51,7 +53,7 @@ function App() {
               <YritysMyynti />
             </Route>
             <Route path="/product">
-              <ProductPage />
+              <ProductPage isOpen={(value) => setItem(value)} />
             </Route>
             <Route path="/info/service">
               <Service />
@@ -63,7 +65,7 @@ function App() {
               <Tietosuoja />
             </Route>
             <Route exact path="/">
-              <ProductList />
+              <ProductList isOpen={(value) => setItem(value)}  />
             </Route>
             <Route exact path="/">
               <BottomLinks />
@@ -73,6 +75,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <CartAlert isOpen={newItem} />
     </Router>
   );
 }
