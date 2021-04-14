@@ -2,11 +2,12 @@
     text-align: center;
     font-size: xx-large;
     color: #45A29E;
+    font-family: 'Roboto';
    }
    
    
    .card-text {
-       font-size: 1rem;
+       font-size: large;
        text-align: center;
        padding: 0.4rem 1.9rem;
          
@@ -26,6 +27,10 @@
        min-height: 347px;
        vertical-align: middle;
    
+   }
+
+   .toimiPisteTeksti {
+    font-family: 'Roboto';
    }
    
    

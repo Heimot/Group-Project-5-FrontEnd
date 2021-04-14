@@ -16,6 +16,8 @@ import Service from "./components/Service";
 import Ukk from "./components/Ukk";
 import Tietosuoja from "./components/Tietosuoja";
 import CartAlert from './components/CartAlert';
+import Registration from "./components/Registration";
+import InfoGroups from "./components/InfoGroups";
 
 function App() {
   const [newItem, setItem] = useState(null);
@@ -45,6 +47,12 @@ function App() {
             </div>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/login">
+              <Registration />
+            </Route>
+            <Route path="/info/">
+              <InfoGroups />
             </Route>
             <Route path="/info/YhteystiedotSivu">
               <Contacts />

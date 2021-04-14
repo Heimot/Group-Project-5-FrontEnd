@@ -70,9 +70,9 @@ export default function YritysMyyntiOtsikko() {
                         <div className="form-group">
                             <div className="form-check">
                                 <input className="form-check-input" type="checkbox" value="" required />
-                                <label className="asd form-check-label">
-                                    Hyväksyn käyttäjäsopimusehdot ja tietosuojaselosteen.&nbsp;<a className="punaPilkku">*</a>
-                                </label>
+                                <label className="form-check-label">
+                                    Hyväksyn käyttäjäsopimusehdot ja tietosuojaselosteen.
+                                    </label>
                             </div>
                         </div>
                         <div className="form-group">

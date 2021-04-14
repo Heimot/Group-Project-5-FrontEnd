@@ -1,5 +1,6 @@
 .otsikko {
     text-align: center;
+    font-family: 'Roboto';
 }
 
 .tietoja {
@@ -10,9 +11,11 @@
 .MyyOtsikko {
     margin-left: 30px;
     margin-right: 30px;
+    font-family: 'Roboto';
 }
 
 .covidInfo {
     margin-left: 30px;
     margin-right: 30px;
+    font-family: 'Roboto';
 }
