@@ -34,10 +34,10 @@ function Navigation() {
       <Navbar.Toggle className="navCategories" aria-controls="responsive-navbar-nav" />
       <div className="navBarMain">
         <div className="navBarMain">
-          <FormControl type="text" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" />
-          <Button className="navigationSearchBtn" variant="outline-primary">Search</Button>
+          <FormControl name="form1" type="text" method="get" action="search.php" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" required/>
+          <Button name="submit" className="navigationSearchBtn" variant="outline-primary">Search</Button>
         </div>
-        <Nav.Link className="navCartAndLogin" href="login">
+        <Nav.Link className="navCartAndLogin" href="/login">
           <FontAwesomeIcon icon={faUserCircle} size="3x"/>
         </Nav.Link>
         <Nav.Link className="navCartAndLogin" eventKey={2} href="cart">

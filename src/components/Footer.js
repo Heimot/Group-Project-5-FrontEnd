@@ -16,7 +16,7 @@ export default function Footer() {
                <h4>Asiakaspalvelu</h4>
                <p>Ma-Pe 9-16</p>
                <p><FontAwesomeIcon icon={faPhone} /> +35840123456</p>
-               <p><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:digifemma@digifemma.fi">digifemma@digifemma.fi</a></p>
+               <p><FontAwesomeIcon icon={faEnvelope} /> <a className="email" href="mailto:digifemma@digifemma.fi">digifemma@digifemma.fi</a></p>
                <p>Digikatu 3</p>
                <p>90100, Oulu</p>
             </div>

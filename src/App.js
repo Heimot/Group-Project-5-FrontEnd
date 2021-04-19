@@ -17,6 +17,7 @@ import Ukk from "./components/Ukk";
 import Tietosuoja from "./components/Tietosuoja";
 import Registration from "./components/Registration";
 import InfoGroups from "./components/InfoGroups";
+import Producers from "./components/Producers";
 
 function App() {
 
@@ -78,6 +79,7 @@ function App() {
               <Tietoja />
             </Route>
             <Footer />
+            <Producers />
           </Route>
         </Switch>
       </div>
