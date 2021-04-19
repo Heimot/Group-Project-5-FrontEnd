@@ -19,6 +19,7 @@ import CartAlert from './components/CartAlert';
 import Registration from "./components/Registration";
 import InfoGroups from "./components/InfoGroups";
 import Producers from "./components/Producers";
+import Admin from "./components/Admin";
 
 function App() {
   const [newItem, setItem] = useState(null);
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route path="/info/YhteystiedotSivu">
               <Contacts />
+            </Route>
+            <Route path="/info/Admin">
+              <Admin />
             </Route>
             <Route path="/info/YritysMyynti">
               <YritysMyynti />

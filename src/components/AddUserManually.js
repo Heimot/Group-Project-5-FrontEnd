@@ -1,7 +1,7 @@
-import './addorder.css';
+import './AddUserManually.css';
 import React, { useState } from 'react';
 
-export default function AddOrder() {
+export default function AddUserManually() {
 
     const [serverResponse, setServerResponse] = useState([]); // shows last insert ID
 
