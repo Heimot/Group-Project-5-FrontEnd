@@ -40,7 +40,7 @@ function Navigation() {
         <Nav.Link className="navCartAndLogin" href="/login">
           <FontAwesomeIcon icon={faUserCircle} size="3x"/>
         </Nav.Link>
-        <Nav.Link className="navCartAndLogin" eventKey={2} href="cart">
+        <Nav.Link className="navCartAndLogin" eventKey={2} href="/cart">
         <FontAwesomeIcon icon={faShoppingCart} size="3x"/>
         </Nav.Link>
       </div>

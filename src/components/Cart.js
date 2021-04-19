@@ -44,6 +44,10 @@ function Cart() {
         }
     }, [delivery])
 
+    function newOrder() {
+        // Tähän tilauksen luonti tietokantaan
+    }
+
     return (
         <div className="cartBody container">
             {cart.length !== 0 ?
@@ -156,7 +160,7 @@ function Cart() {
                                 <div className="row">
                                     {IBank.map((item) => {
                                         return (
-                                            <div onClick={() => setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
@@ -164,7 +168,7 @@ function Cart() {
                                 <div className="row">
                                     {mPay.map((item) => {
                                         return (
-                                            <div onClick={() => setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
@@ -172,7 +176,7 @@ function Cart() {
                                 <div className="row">
                                     {card.map((item) => {
                                         return (
-                                            <div onClick={() => setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
