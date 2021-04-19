@@ -1,0 +1,22 @@
+.ekatTiedot {
+    margin-bottom: 5px;
+    margin-top: 25px;
+    font-size: large;
+    font-family: 'Roboto';
+}
+.tokatTiedot {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-size: large;
+    font-family: 'Roboto';
+}
+
+.otsikkoLisUusTil {
+    text-align: center;
+    font-family: 'Roboto';
+    color: #45A29E;
+}
+.tilausNappi {
+    background-color: #45A29E;
+}
+
