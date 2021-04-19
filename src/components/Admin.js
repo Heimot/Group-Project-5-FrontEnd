@@ -1,4 +1,4 @@
-import Addorder from "./Addorder";
+import AddUserManually from "./AddUserManually";
 
 
 
@@ -6,7 +6,7 @@ import Addorder from "./Addorder";
 export default function Admin() {
     return(
         <div>
-            <Addorder />
+            <AddUserManually />
         </div>
     );
 }
