@@ -97,6 +97,7 @@ export default function AddUserManually() {
                             <input className="form-group col-md-6" value={city} onChange={e => setCity(e.target.value)} placeholder='Asiakkaan postitoimipaikka...' />
                             <input className="form-group col-md-6" value={phone} onChange={e => setPhone(e.target.value)} placeholder='Asiakkaan puhelinnumero...' />
                             <input className="form-group col-md-6" value={password} onChange={e => setPassword(e.target.value)} placeholder='Luo salasana...'/>
+
                             <input type="hidden" value={customerid} onChange={e => setCustomerid(e.target.value)}/>
                         </div>
                             <button type="submit" className="tilausNappi btn btn-block">Lisää Asiakas:</button>
