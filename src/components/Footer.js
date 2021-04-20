@@ -37,6 +37,7 @@ export default function Footer() {
                <a className="ikonit" href="https://www.instagram.com/" target="_blank"><FontAwesomeIcon icon={faInstagram} size="6x"/></a>
             </div>
          </div>
+         <hr className="viiva"></hr>
       </footer>
    )
 }

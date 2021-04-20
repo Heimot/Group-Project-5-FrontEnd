@@ -77,7 +77,6 @@ function App() {
               <ProductList isOpen={(value) => setItem(value)}  />
             </Route>
             <Route exact path="/">
-              <BottomLinks />
               <Tietoja />
             </Route>
             <Footer />
