@@ -8,22 +8,26 @@ export default function ProductItem(props) {
   const [open, setOpen] = useState(false);
 
   function addToCart(ids) {
-    let id = ids.toString();
+    let ID = ids.toString();
     let cart = [];
     if (localStorage.getItem("cart")) {
         cart = JSON.parse(localStorage.getItem("cart"));
     }
-    const found = cart.some(el => el.id === id)
+    const found = cart.some(el => el.ID === ID)
     if (found) {
-        const allCartValues = cart.filter(item => item.id !== id)
-        const cartValue = cart.filter(item => item.id === id)
-        allCartValues.push({id, amount: cartValue[0].amount + 1 })
+        const allCartValues = cart.filter(item => item.ID !== ID)
+        const cartValue = cart.filter(item => item.ID === ID)
+        allCartValues.push({ID, amount: cartValue[0].amount + 1 })
         cart = allCartValues;
     } else {
-        cart.push({ id, amount: 1 })
+        cart.push({ ID, amount: 1 })
     }
     let stringCart = JSON.stringify(cart);
     localStorage.setItem("cart", stringCart);
+    let name = props.product.tuote;
+    // kun kuva haetaan backendistä niin tämä pitää muuttaa :)
+    let IMG = "https://bulma.io/images/placeholders/128x128.png";
+    props.isOpen2({ID, name, IMG});
 }
 
   return (

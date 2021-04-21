@@ -5,11 +5,14 @@
     font-size: xx-large;
     text-align: center;
     font-family: 'Roboto';
+    color: #45A29E;
+
 }
 .vasenReunaOtsikko {
     font-size: xx-large;
     text-align: center;
     font-family: 'Roboto';
+    color: #45A29E;
 }
 .oikeaReuna {
     font-size: large;
@@ -25,10 +28,6 @@
     color: red;
     font-size: x-large;
 }
- .LuontiNappi {
-    font-size: xx-large;
- }
-
  .vasenReunaEkaKappale {
     text-align: center;
     margin-top: 60px;

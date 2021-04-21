@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import React, { useState } from 'react';
 
 export default function Registration() {
@@ -101,14 +101,18 @@ export default function Registration() {
 
   return (
     <div className="container">
+      <div className="col-12 text-center">
       <h1>Login and Registration</h1>
+      </div>
+      <div className="col-12 text-center">
       <form onSubmit={login}>
-        <label>Login:
+        <label>Käyttäjätunnus 
           <input value={emailLogin} onChange={e => setEmailLogin(e.target.value)} placeholder='Enter Email...'/>
           <input value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)} placeholder='Enter password...'/>
           <button>Login</button>
         </label>
-      </form> 
+      </form>
+      </div>
       <form onSubmit={registration}>
         <label>Create user:
           <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Enter Email...'/>

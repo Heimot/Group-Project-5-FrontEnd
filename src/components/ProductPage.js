@@ -15,11 +15,17 @@ import "./productPage.css";
 import IMG from '../img/localproduct.png';
 import Comments from './Comments.js'
 
-function ProductPage() {
+function ProductPage(props) {
     const [Rating, setRating] = useState(null);
     const [price, setPrice] = useState(49.99);
+<<<<<<< HEAD
     const [description, setDesc] = useState(null)
     const [showComment, setShowComment] = useState(false)
+=======
+    const [description, setDesc] = useState(null);
+    const [name, setName] = useState("GET NAME FROM FETCH");
+    const [ID, setID] = useState(null);
+>>>>>>> b275508f0668acb1ec49f963fb35b68af3453829
 
     var productImageSettings = {
         dots: true,
@@ -31,7 +37,6 @@ function ProductPage() {
         centerMode: true
     };
 
-    const [ID, setID] = useState(null)
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('productid');
@@ -46,18 +51,18 @@ function ProductPage() {
         let starAmount = [null];
         let i = null;
         for (i = 0; i < Rating; i++) {
-            starAmount.push(<FontAwesomeIcon icon={faStar} />)
+            starAmount.push(<FontAwesomeIcon key={i} icon={faStar} />)
         }
         if (Rating < 5) {
             for (i = i; i < 5; i++) {
-                starAmount.push(<FontAwesomeIcon icon={emptyStar} />);
+                starAmount.push(<FontAwesomeIcon key={i} icon={emptyStar} />);
             }
         }
         return starAmount;
     }
 
-    function addToCart(ids) {
-        let id = ids.toString();
+    function addToCart() {
+        let id = ID.toString();
         let cart = [];
         if (localStorage.getItem("cart")) {
             cart = JSON.parse(localStorage.getItem("cart"));
@@ -73,6 +78,7 @@ function ProductPage() {
         }
         let stringCart = JSON.stringify(cart);
         localStorage.setItem("cart", stringCart);
+        props.isOpen({ID, name, IMG});
     }
 
     return (
@@ -88,7 +94,7 @@ function ProductPage() {
                 </div>
                 <div className="col-sm-12 col-lg-5">
                     <Card.Title>
-                        PRODUCT NAME FROM GET HERE
+                        {name}
                     </Card.Title>
                     <Card.Text className="productCode">Tuotekoodi {ID}</Card.Text>
                     <div>
@@ -98,7 +104,7 @@ function ProductPage() {
                     <div className="productPrice">
                         {price}€
                     </div>
-                    <Button onClick={() => addToCart(ID)} className="productPurchaseBtn">
+                    <Button onClick={() => addToCart()} className="productPurchaseBtn">
                         Lisää ostoskoriin
                     </Button>
                     <Button disabled={true} className="productPurchaseBtn">

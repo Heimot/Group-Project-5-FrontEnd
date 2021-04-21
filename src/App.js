@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from './components/Navigation';
 import ProductGroups from './components/ProductGroups';
@@ -15,11 +15,17 @@ import YritysMyynti from './components//YritysMyynti';
 import Service from "./components/Service";
 import Ukk from "./components/Ukk";
 import Tietosuoja from "./components/Tietosuoja";
+import CartAlert from './components/CartAlert';
+import Registration from "./components/Registration";
+import InfoGroups from "./components/InfoGroups";
+import Producers from "./components/Producers";
+import Admin from "./components/Admin";
 
 function App() {
+  const [newItem, setItem] = useState(null);
 
   useEffect(() => {
-    if(localStorage.getItem("cart") === null) {
+    if (localStorage.getItem("cart") === null) {
       localStorage.setItem("cart", "[]");
     }
   }, [])
@@ -44,14 +50,23 @@ function App() {
             <Route path="/cart">
               <Cart />
             </Route>
+            <Route path="/login">
+              <Registration />
+            </Route>
+            <Route path="/info/">
+              <InfoGroups />
+            </Route>
             <Route path="/info/YhteystiedotSivu">
               <Contacts />
+            </Route>
+            <Route path="/Admin">
+              <Admin />
             </Route>
             <Route path="/info/YritysMyynti">
               <YritysMyynti />
             </Route>
             <Route path="/product">
-              <ProductPage />
+              <ProductPage isOpen={(value) => setItem(value)} />
             </Route>
             <Route path="/info/service">
               <Service />
@@ -63,16 +78,18 @@ function App() {
               <Tietosuoja />
             </Route>
             <Route exact path="/">
-              <ProductList />
+              <ProductList isOpen={(value) => setItem(value)}  />
             </Route>
             <Route exact path="/">
               <BottomLinks />
               <Tietoja />
             </Route>
             <Footer />
+            <Producers />
           </Route>
         </Switch>
       </div>
+      <CartAlert isOpen={newItem} />
     </Router>
   );
 }
