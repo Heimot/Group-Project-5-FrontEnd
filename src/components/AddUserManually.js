@@ -9,8 +9,6 @@ export default function AddUserManually() {
     
 
     const [customerid, setCustomerid] = useState(0);
-    const [shipping, setShipping] = useState('');
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstname, setFirstname] = useState('');
@@ -69,7 +67,7 @@ export default function AddUserManually() {
               }
               )
             } else {
-              alert("Already registered!")
+              alert("Ongelma käyttäjän lisäämisessä!")
             }
           }, (error) => {
             alert(error);
