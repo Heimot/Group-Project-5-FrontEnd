@@ -13,13 +13,19 @@ import "./productPage.css";
 
 // IMG
 import IMG from '../img/localproduct.png';
+import Comments from './Comments.js'
 
 function ProductPage(props) {
     const [Rating, setRating] = useState(null);
     const [price, setPrice] = useState(49.99);
+<<<<<<< HEAD
+    const [description, setDesc] = useState(null)
+    const [showComment, setShowComment] = useState(false)
+=======
     const [description, setDesc] = useState(null);
     const [name, setName] = useState("GET NAME FROM FETCH");
     const [ID, setID] = useState(null);
+>>>>>>> b275508f0668acb1ec49f963fb35b68af3453829
 
     var productImageSettings = {
         dots: true,
@@ -93,6 +99,7 @@ function ProductPage(props) {
                     <Card.Text className="productCode">Tuotekoodi {ID}</Card.Text>
                     <div>
                         {reviewStars()}
+                        <Button onClick={() => setShowComment(true)} className="review">Reviews</Button>
                     </div>
                     <div className="productPrice">
                         {price}€
@@ -105,6 +112,9 @@ function ProductPage(props) {
                     </Button>
                     <div className="productDescription">
                         {description}
+                    </div>
+                    <div id="reviews" className="btn" style={{display: showComment ? 'inline' : 'none'}}>
+                        <Comments />
                     </div>
                 </div>
             </div>

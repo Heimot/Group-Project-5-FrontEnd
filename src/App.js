@@ -75,7 +75,7 @@ function App() {
             <Route path="/info/YhteystiedotSivu">
               <Contacts />
             </Route>
-            <Route path="/info/Admin">
+            <Route path="/Admin">
               <Admin />
             </Route>
             <Route path="/info/YritysMyynti">
@@ -97,6 +97,7 @@ function App() {
               <ProductList isOpen={(value) => setItem(value)}  />
             </Route>
             <Route exact path="/">
+              <BottomLinks />
               <Tietoja />
             </Route>
             <Footer />
