@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react';
 import { faAt, faCity, faKey, faMapMarkedAlt, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 
-export default function Registration() {
+export default function AccountUpdate() {
 
   const [serverResponse, setServerResponse] = useState('');
 
@@ -77,7 +77,7 @@ export default function Registration() {
   return (
     <div className="container">
 <div className="col-12 text-center mt-5 mb-3">
-      <h1>REKISTERÖITYMINEN</h1>
+      <h1>TILISI TIEDOT</h1>
       </div>
       <Form onSubmit={registration}>
 
@@ -90,7 +90,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faAt} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-            <Form.Control value={email} type="email" maxLength="256" onChange={e => setEmail(e.target.value)} placeholder='esimerkki@gmail.com' required/>
+            <Form.Control value={email} type="email" maxLength="256" onChange={e => setEmail(e.target.value)} required/>
             </InputGroup>
             </Form.Group>
 
@@ -102,7 +102,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faKey} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-          <Form.Control value={password} maxLength="256" type="password" onChange={e => setPassword(e.target.value)} placeholder='Salasana' required/>
+          <Form.Control value={password} maxLength="256" type="password" onChange={e => setPassword(e.target.value)} required/>
           </InputGroup>
           </Form.Group>
           </Form.Row>
@@ -116,7 +116,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faUser} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-            <Form.Control value={firstname} maxLength="256" onChange={e => setFirstname(e.target.value)} placeholder='Etunimi' required/>
+            <Form.Control value={firstname} maxLength="256" onChange={e => setFirstname(e.target.value)} required/>
             </InputGroup>
             </Form.Group>
 
@@ -128,7 +128,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faUser} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-          <Form.Control value={lastname} maxLength="256" onChange={e => setLastname(e.target.value)} placeholder='Sukunimi' required/>
+          <Form.Control value={lastname} maxLength="256" onChange={e => setLastname(e.target.value)} required/>
           </InputGroup>
           </Form.Group>
           </Form.Row>
@@ -142,7 +142,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faMapMarkedAlt} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-            <Form.Control value={address} maxLength="16" onChange={e => setAddress(e.target.value)} placeholder='Osoite' required/>
+            <Form.Control value={address} maxLength="16" onChange={e => setAddress(e.target.value)} required/>
             </InputGroup>
             </Form.Group>
 
@@ -154,7 +154,7 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faMapMarkedAlt} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-          <Form.Control value={postalcode} maxLength="16" onChange={e => setPostalcode(e.target.value)} placeholder='Postinumero' required/>
+          <Form.Control value={postalcode} maxLength="16" onChange={e => setPostalcode(e.target.value)} required/>
           </InputGroup>
           </Form.Group>
           </Form.Row>
@@ -168,7 +168,7 @@ export default function Registration() {
             <FontAwesomeIcon icon={faCity} />
             </InputGroup.Text>
             </InputGroup.Prepend>
-            <Form.Control value={city} maxLength="64" onChange={e => setCity(e.target.value)} placeholder='Kaupunki' required/>
+            <Form.Control value={city} maxLength="64" onChange={e => setCity(e.target.value)} required/>
             </InputGroup>
             </Form.Group>
 
@@ -180,11 +180,11 @@ export default function Registration() {
                   <FontAwesomeIcon icon={faPhone} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-          <Form.Control value={phone} maxLength="16" onChange={e => setPhone(e.target.value)} placeholder='Puhelinnumero' required/>
+          <Form.Control value={phone} maxLength="16" onChange={e => setPhone(e.target.value)} required/>
           </InputGroup>
           </Form.Group>
           </Form.Row>          
-          <Button className="navigationSearchBtn" type="submit">Rekisteröidy</Button>
+          <Button className="navigationSearchBtn" type="submit">Päivitä tietosi</Button>
       </Form>
       <div>
       {serverResponse}

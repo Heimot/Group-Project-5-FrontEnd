@@ -20,6 +20,10 @@ import Registration from "./components/Registration";
 import InfoGroups from "./components/InfoGroups";
 import Producers from "./components/Producers";
 import Admin from "./components/Admin";
+import Login from './components/Login';
+import RegisterSuccess from './components/RegisterSuccess';
+import AccountPage from './components/AccountPage';
+import AccountUpdate from './components/AccountUpdate';
 
 function App() {
   const [newItem, setItem] = useState(null);
@@ -51,7 +55,19 @@ function App() {
               <Cart />
             </Route>
             <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/registration">
               <Registration />
+              </Route>
+              <Route path="/registrationsuccess">
+              <RegisterSuccess />
+            </Route>
+            <Route path="/account/">
+              <AccountPage />
+            </Route>
+            <Route path="/accountupdate">
+              <AccountUpdate />
             </Route>
             <Route path="/info/">
               <InfoGroups />
