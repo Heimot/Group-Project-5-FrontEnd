@@ -18,14 +18,10 @@ import Comments from './Comments.js'
 function ProductPage(props) {
     const [Rating, setRating] = useState(null);
     const [price, setPrice] = useState(49.99);
-<<<<<<< HEAD
     const [description, setDesc] = useState(null)
     const [showComment, setShowComment] = useState(false)
-=======
-    const [description, setDesc] = useState(null);
     const [name, setName] = useState("GET NAME FROM FETCH");
     const [ID, setID] = useState(null);
->>>>>>> b275508f0668acb1ec49f963fb35b68af3453829
 
     var productImageSettings = {
         dots: true,
