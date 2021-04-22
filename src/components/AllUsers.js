@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react';
 
 
 export default function AllUsers() {
-    const [orders, setOrders] = useState([]);
+    const [customer, setCustomers] = useState([]);
   
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export default function AllUsers() {
       .then(response => response.json())
       .then(
         (response) => {
-          setOrders(response);
+          setCustomers(response);
         }, (error) => {
           alert(error);
         }
@@ -31,7 +31,7 @@ export default function AllUsers() {
       .then(response => response.json())
       .then(
         (response) => {
-          setOrders(response);
+          setCustomers(response);
         }, (error) => {
           alert(error);
         }
@@ -46,7 +46,7 @@ return (
       <form onSubmit={show}>
     </form>
     <ol>
-        {orders.map(item => (
+        {customer.map(item => (
             <li type='none' key={item.id}>
               <ul className="kaikkiAsiakkaat">Etunimi:&nbsp;{item.firstname}</ul>
               <ul className="kaikkiAsiakkaat">Sukunimi:&nbsp;{item.lastname}</ul>
