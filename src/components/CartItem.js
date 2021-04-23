@@ -1,35 +1,38 @@
 import { useState, useEffect } from 'react';
 import IMG from '../img/localproduct.png';
+import useFetch from './hooks/fetch'
 import './CartItem.css';
 
 function CartItem(props) {
     const [amount, setAmount] = useState(props.item.amount)
-    /*kaikki nämä valuet tulevat myöhemmin fetchin avulla propsejen kautta!*/
-    // vaihda kaikki 499 myöhemmin fetchin hintoihin!!!!!!!!!!!!!!
+
+    let productData = useFetch('http://localhost/Group-Project-5-BackEnd/id.php?id=' + props.item.id, { method: "GET", headers: {'Content-Type': 'application/json'} });
 
     useEffect(() => {
         Prices();
-    }, [])
+    }, [productData])
 
     function Prices() {
-        props.allPrices(499 * amount);
+        if (productData) {
+            props.allPrices(productData[0].price * amount);
+        }
     }
 
     function onePrice(oldValue, value) {
         if (oldValue[0].amount < value) {
-            props.allPrices(499 * (value - oldValue[0].amount))
+            props.allPrices(productData[0].price * (value - oldValue[0].amount))
         } else {
             if (value < 0) {
                 value = 0;
             }
-            props.allPrices(-499 * (oldValue[0].amount - value))
+            props.allPrices(-productData[0].price * (oldValue[0].amount - value))
         }
 
     }
 
     function Price() {
-        let price = 499 * amount;
-        return `${price} €`;
+        let price = productData[0].price * amount;
+        return `${price.toFixed(2)} €`;
     }
 
     function changeAmount(value) {
@@ -56,26 +59,30 @@ function CartItem(props) {
     }
 
     return (
-        <div id={props.item.id} className="cartItem row">
-            <div className="cartProductItem col-3 col-sm-3 col-md-5 col-xl-6">
-                <img className="cartItemIMG d-none d-md-block image" src={IMG} alt="no"></img>
-                <div className="text-wrap">
-                    BenQ 23,8" GW2475H, Full HD -monitori, musta (Tarjous! Norm. 139€!)
-                </div>
-            </div>
-            {props.pos !== 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
-                <input min={0} value={amount} type="number" onChange={(e) => setAmount(e.target.value) + changeAmount(e.target.value)} className="cartProductAmount"></input>
-            </div> : null}
+        <div id={props.item.id} >
+            {productData ?
+                <div className="cartItem row">
+                    <div className="cartProductItem col-3 col-sm-3 col-md-5 col-xl-6">
+                        <img className="cartItemIMG d-none d-md-block image" src={IMG} alt="no"></img>
+                        <div className="text-wrap">
+                            {productData[0].name}
+                    </div>
+                    </div>
+                    {props.pos !== 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
+                        <input min={0} value={amount} type="number" onChange={(e) => setAmount(e.target.value) + changeAmount(e.target.value)} className="cartProductAmount"></input>
+                    </div> : null}
 
-            {props.pos === 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
-                <div>{amount}</div>
-            </div> : null}
-            <div className="cartItemText col-3 col-sm-3 col-md-2 col-xl-2">
-                499.0 €
-            </div>
-            <div className="cartItemText font-weight-bold col-3 col-sm-3 col-md-2 col-xl-2">
-                {Price()}
-            </div>
+                    {props.pos === 3 ? <div className="cartItemText col-3 col-sm-3 col-md-3 col-xl-2">
+                        <div>{amount}</div>
+                    </div> : null}
+                    <div className="cartItemText col-3 col-sm-3 col-md-2 col-xl-2">
+                        {productData[0].price}
+                    </div>
+                    <div className="cartItemText font-weight-bold col-3 col-sm-3 col-md-2 col-xl-2">
+                        {Price()}
+                    </div>
+                </div>
+                : null}
         </div>
     )
 }
