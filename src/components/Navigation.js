@@ -1,24 +1,46 @@
 import { Nav, Navbar, NavDropdown, FormControl, Button } from "react-bootstrap";
+import { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5-uus.png";
 import './navigation.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import useFetch from './hooks/fetch';
 
 function Navigation() {
-  let arr = [{ id: "1", ryhma: "Osat", underGroups: ["1", "2", "3"] }, { id: "2", ryhma: "Koneet", underGroups: ["4", "5", "6"] }, { id: "3", ryhma: "Lisätarvikkeet", underGroups: ["Hiiret", "Näppäimistöt"] }, { id: "4", ryhma: "Komponentit", underGroups: ["GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY", "GPU", "CPU", "EMOLEVY"] }, { id: "5", ryhma: "Näytöt" }, { id: "6", ryhma: "Gaming" }, { id: "7", ryhma: "TV ja video" }, { id: "8", ryhma: "Kamerat" }, { id: "9", ryhma: "Palvelut" }];
+  const [width, setwidth] = useState(getWidth())
 
-  function underGroups(ryhma, item) {
-    let i = 0;
-    let values = [];
-    if (item) {
-      for (i = 0; i < item.length; i++) {
-        values.push(<NavDropdown.Item key={`${ryhma}/${item[i]}`} className="navDropItem" href={`/category/${ryhma}/${item[i]}`}>{item[i]}</NavDropdown.Item>);
-      }
-      return values;
+  let category = useFetch('http://localhost/Group-Project-5-BackEnd/category.php', { method: "GET", headers: { 'Content-Type': 'application/json' } });
+  let sub = useFetch('http://localhost/Group-Project-5-BackEnd/allsub.php', { method: "GET", headers: { 'Content-Type': 'application/json' } })
+
+  function subCategories(id, ryhma) {
+    if (sub) {
+      let arr = [];
+      let value2 = sub.filter(item => {
+        return item.categoryID === id
+      })
+      value2.map(item => {
+        arr.push(<NavDropdown.Item key={`${ryhma}/${item.name}`} className="navDropItem" href={`/category/${ryhma}/${item.name}`}>{item.name}</NavDropdown.Item>);
+      })
+      return (arr);
     }
   }
+
+  function getWidth() {
+    const { innerWidth: width } = window;
+    return {
+      width
+    };
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setwidth(getWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -38,24 +60,26 @@ function Navigation() {
           <Button className="navigationSearchBtn" variant="outline-primary">Search</Button>
         </div>
         <Nav.Link className="navCartAndLogin" href="/login">
-          <FontAwesomeIcon icon={faUserCircle} size="3x"/>
+          <FontAwesomeIcon icon={faUserCircle} size="3x" />
         </Nav.Link>
         <Nav.Link className="navCartAndLogin" eventKey={2} href="/cart">
-        <FontAwesomeIcon icon={faShoppingCart} size="3x"/>
+          <FontAwesomeIcon icon={faShoppingCart} size="3x" />
         </Nav.Link>
       </div>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <div className="navCategories">
-            {arr.map((item) => {
-              return (
-                <NavDropdown key={item.id} title={item.ryhma} id="collasible-nav-dropdown">
-                  {underGroups(item.ryhma, item.underGroups)}
-                </NavDropdown>
-              )
-            })
-            }
-          </div>
+          {width.width < 767 && category ?
+            <div className="navCategories">
+              {category.map((item) => {
+                return (
+                  <NavDropdown key={item.id} title={item.name} id="collasible-nav-dropdown">
+                    {subCategories(item.id, item.name)}
+                  </NavDropdown>
+                )
+              })
+              }
+            </div>
+            : null}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
