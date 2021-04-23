@@ -29,8 +29,6 @@ function Cart() {
         if (JSON.parse(localStorage.getItem("cart")).length <= 0) {
             setCart([])
         }
-
-
     }, [price])
 
     useEffect(() => {
@@ -44,8 +42,29 @@ function Cart() {
         }
     }, [delivery])
 
+    console.log(credentials)
+
     function newOrder() {
-        // Tähän tilauksen luonti tietokantaan
+        fetch("http://localhost/Group-Project-5-BackEnd/neworder.php", { 
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                customerid: null,
+                price: values.toFixed(2),
+                shipping: 1,
+                email: credentials.email,
+                firstname: credentials.firstName,
+                lastname: credentials.lastName,
+                address: credentials.address,
+                postalcode: credentials.zip,
+                city: credentials.municipality,
+                phone: credentials.phoneNumber,
+                cart: cart
+            })
+        })
     }
 
     return (
@@ -94,7 +113,7 @@ function Cart() {
                                             <div>
                                                 <br />
                                                 {position === 3 ? <div>{delivery[0].cost} €</div> : null}
-                                                <div className="cartWholePrice">Yhteensä: {values} €</div>
+                                                <div className="cartWholePrice">Yhteensä: {values.toFixed(2)} €</div>
                                             </div>
                                         </div>
                                     </div>
@@ -160,7 +179,7 @@ function Cart() {
                                 <div className="row">
                                     {IBank.map((item) => {
                                         return (
-                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div key={item.bank} onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
@@ -168,7 +187,7 @@ function Cart() {
                                 <div className="row">
                                     {mPay.map((item) => {
                                         return (
-                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div key={item.bank} onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
@@ -176,7 +195,7 @@ function Cart() {
                                 <div className="row">
                                     {card.map((item) => {
                                         return (
-                                            <div onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
+                                            <div key={item.bank} onClick={() => newOrder() + setPosition(position + 1)} className="paymentProviders ml-4 col-5 col-lg-1">{item.bank}</div>
                                         )
                                     })}
                                 </div>
