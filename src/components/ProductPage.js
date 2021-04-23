@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons'
+import useFetch from './hooks/fetch';
 
 // CSS
 import "slick-carousel/slick/slick.css";
@@ -31,17 +32,24 @@ function ProductPage(props) {
         centerMode: true
     };
 
+
+
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('productid');
         setID(myParam);
-        setDesc("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        //setDesc("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
         // IDSTÄ LÖYTÄÄ IDN JOLLA TULLAAN HAKEMAAN YKSI PRODUCT!
         // vaihdetaan tämä kun saa ratingin itse backendistä
-        setRating(3)
+        //setRating(3)
     }, []);
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('productid');
+    let productData = useFetch('http://localhost/Group-Project-5-BackEnd/id.php?id=' + myParam, { method: "GET", headers: {'Content-Type': 'application/json'} })
+
     function reviewStars() {
+        // Rating is not yet implemented!
         let starAmount = [null];
         let i = null;
         for (i = 0; i < Rating; i++) {
@@ -56,7 +64,7 @@ function ProductPage(props) {
     }
 
     function addToCart() {
-        let id = ID.toString();
+        let id = productData[0].id;
         let cart = [];
         if (localStorage.getItem("cart")) {
             cart = JSON.parse(localStorage.getItem("cart"));
@@ -65,49 +73,51 @@ function ProductPage(props) {
         if (found) {
             const allCartValues = cart.filter(item => item.id !== id)
             const cartValue = cart.filter(item => item.id === id)
-            allCartValues.push({id, amount: cartValue[0].amount + 1 })
+            allCartValues.push({ id, amount: cartValue[0].amount + 1 })
             cart = allCartValues;
         } else {
             cart.push({ id, amount: 1 })
         }
         let stringCart = JSON.stringify(cart);
         localStorage.setItem("cart", stringCart);
-        props.isOpen({ID, name, IMG});
+        props.isOpen({ id, name, IMG });
     }
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-sm-12 col-lg-5">
-                    <Slider className="productSlider" {...productImageSettings}>
-                        <img alt="rotating pictures" src={IMG} className="productPicture" />
-                        <img alt="rotating pictures" src={IMG} className="productPicture" />
-                        <img alt="rotating pictures" src={IMG} className="productPicture" />
-                        <img alt="rotating pictures" src={IMG} className="productPicture" />
-                    </Slider>
-                </div>
-                <div className="col-sm-12 col-lg-5">
-                    <Card.Title>
-                        {name}
-                    </Card.Title>
-                    <Card.Text className="productCode">Tuotekoodi {ID}</Card.Text>
-                    <div>
-                        {reviewStars()}
+            {productData ?
+                <div className="row">
+                    <div className="col-sm-12 col-lg-5">
+                        <Slider className="productSlider" {...productImageSettings}>
+                            <img alt="rotating pictures" src={IMG} className="productPicture" />
+                            <img alt="rotating pictures" src={IMG} className="productPicture" />
+                            <img alt="rotating pictures" src={IMG} className="productPicture" />
+                            <img alt="rotating pictures" src={IMG} className="productPicture" />
+                        </Slider>
                     </div>
-                    <div className="productPrice">
-                        {price}€
+                    <div className="col-sm-12 col-lg-5">
+                        <Card.Title>
+                            {productData[0].name}
+                        </Card.Title>
+                        <Card.Text className="productCode">Tuotekoodi {productData[0].id}</Card.Text>
+                        <div>
+                            {reviewStars()}
+                        </div>
+                        <div className="productPrice">
+                            {productData[0].price}€
                     </div>
-                    <Button onClick={() => addToCart()} className="productPurchaseBtn">
-                        Lisää ostoskoriin
+                        <Button onClick={() => addToCart()} className="productPurchaseBtn">
+                            Lisää ostoskoriin
                     </Button>
-                    <Button disabled={true} className="productPurchaseBtn">
-                        Varaa ja nouda
+                        <Button disabled={true} className="productPurchaseBtn">
+                            Varaa ja nouda
                     </Button>
-                    <div className="productDescription">
-                        {description}
+                        <div className="productDescription">
+                            {productData[0].description}
+                        </div>
                     </div>
                 </div>
-            </div>
+                : <div>Loading... (Development? Is XAMPP on?)</div>}
         </div>
     )
 }
