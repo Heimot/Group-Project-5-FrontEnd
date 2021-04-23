@@ -35,7 +35,7 @@ function App() {
             <Navigation />
             <div className="row rowWidth">
               <div className="col-md-3 col-lg-2 productGroupsRow">
-                <Route exact path="/">
+                <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory"]}>
                   <ProductGroups />
                 </Route>
               </div>
@@ -61,7 +61,7 @@ function App() {
               <YritysMyynti />
             </Route>
             <Route path="/product">
-              <ProductPage isOpen={(value) => setItem(value)} />
+              <ProductPage isOpen={(value) => setItem(value)} isOpen2={(value) => setItem(value)} />
             </Route>
             <Route path="/info/service">
               <Service />
@@ -72,8 +72,8 @@ function App() {
             <Route path="/info/tietosuoja">
               <Tietosuoja />
             </Route>
-            <Route exact path="/">
-              <ProductList isOpen={(value) => setItem(value)}  />
+            <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory"]}>
+              <ProductList isOpen={(value) => setItem(value)} isOpen2={(value) => setItem(value)} />
             </Route>
             <Route exact path="/">
               <BottomLinks />
