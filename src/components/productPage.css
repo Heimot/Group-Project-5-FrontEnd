@@ -32,7 +32,9 @@
 
  .productCode {
    color: grey;
-   font-size: 13px;
+   font-size: 13px !important;
+   text-align: left !important;
+   padding: 0 !important;
  }
 
  .productPurchaseBtn {
