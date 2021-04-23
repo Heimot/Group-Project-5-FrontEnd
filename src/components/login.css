@@ -1,0 +1,12 @@
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+
+.register {
+    color: #45A29E ;
+ }
+ 
+ .register:hover {
+    color: #66FCF1;
+ }

@@ -1,0 +1,10 @@
+.kaikkiAsiakkaatOtsikko {
+    text-align: center;
+    padding-bottom: 25px;
+    font-family: 'Roboto';
+    color: #45A29E;
+}
+.kaikkiAsiakkaat {
+    padding-left: 15px;
+    font-family: 'Roboto';
+}

@@ -1,0 +1,13 @@
+.listat {
+    padding: 0;
+}
+
+h5 {
+    font-weight: bolder;
+}
+
+.divborder {
+    border: 4px groove #45A29E;
+    margin: 4px;
+    padding: 4px;
+}
