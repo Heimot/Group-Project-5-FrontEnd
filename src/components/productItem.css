@@ -7,9 +7,10 @@
 }
 
 .price {
+    display: flex;
     font-family: 'Rajdhani', sans-serif;
     font-size: 22px;
-    text-align: center;
+    justify-content: center;
 }
 
 .moreData {
@@ -21,7 +22,7 @@
     background-color: white;
     width: 100%;
     padding: 0;
-    top: 92%;
+    top: 95%;
     height: 150px;
     border: none;
     box-shadow: -5px 5px 3px grey, 5px 5px 3px grey;
@@ -59,4 +60,15 @@
 
 .productCardMoreData {
     font-family: 'Rajdhani', sans-serif;
+}
+
+.productCardTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 !important;
+}
+
+.productCardTitleText {
+    padding: 0px 0px 10px 0px !important;
 }
