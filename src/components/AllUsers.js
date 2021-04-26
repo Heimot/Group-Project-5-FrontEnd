@@ -3,7 +3,9 @@ import React, { useState,useEffect } from 'react';
 
 
 export default function AllUsers() {
-    const [customer, setCustomers] = useState([]);
+    const [customers, setCustomers] = useState([]);
+    const [customer, setCustomer] = useState('');
+    const [customerId, setCustomerId] = useState(0);
   
 
     useEffect(() => {
@@ -37,6 +39,35 @@ export default function AllUsers() {
         }
       )
     } 
+    function deleteCustomer(id) {
+      let status = 0;
+      fetch('http://localhost/Group-Project-5-BackEnd/deleteCustomer.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type':'application/json',
+        },
+        body: JSON.stringify({
+          id: id
+        })
+      })
+      .then(res => {
+        status = parseInt(res.status);
+        return res.json();
+      })
+      .then(
+        (res) => {
+          if (status === 200) {
+            const newListWithoutRemoved = customers.filter((item) => item.id !== id);
+            setCustomer(newListWithoutRemoved);
+          } else {
+            alert(res.error);
+          }
+        }, (error) => {
+          alert(error)
+        }
+      )
+    }
 
 
 
@@ -46,7 +77,7 @@ return (
       <form onSubmit={show}>
     </form>
     <ol>
-        {customer.map(item => (
+        {customers.map(item => (
             <li type='none' key={item.id}>
               <ul className="kaikkiAsiakkaat">Etunimi:&nbsp;{item.firstname}</ul>
               <ul className="kaikkiAsiakkaat">Sukunimi:&nbsp;{item.lastname}</ul>
@@ -55,6 +86,7 @@ return (
               <ul className="kaikkiAsiakkaat">Kaupunki:&nbsp;{item.city}</ul>
               <ul className="kaikkiAsiakkaat">Sähköposti:&nbsp;{item.email}</ul>
               <ul className="kaikkiAsiakkaat">Puhelinnumero:&nbsp;{item.phone}</ul>
+              <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas:</a>
             </li>
         ))}
       </ol>      

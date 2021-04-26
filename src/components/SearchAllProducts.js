@@ -5,10 +5,14 @@ import './searchAllProducts.css';
 
 export default function SearchAllProducts() {
     const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState('');
+    const [productId, setProductId] = useState(0);
+
+
   
 
     useEffect(() => {
-      fetch('http://localhost/Group-Project-5-BackEnd/product.php')
+      fetch('http://localhost/Group-Project-5-BackEnd/showproducts.php')
       .then(response => response.json())
       .then(
         (response) => {
@@ -19,8 +23,8 @@ export default function SearchAllProducts() {
       )
     }, [])  
   
-    function showProducts() {
-      fetch('http://localhost/Group-Project-5-BackEnd/product.php', {
+    function show() {
+      fetch('http://localhost/Group-Project-5-BackEnd/showproducts.php', {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -39,12 +43,42 @@ export default function SearchAllProducts() {
       )
     } 
 
+    function deleteProduct(id) {
+      let status = 0;
+      fetch('http://localhost/Group-Project-5-BackEnd/deleteProduct.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type':'application/json',
+        },
+        body: JSON.stringify({
+          id: id
+        })
+      })
+      .then(res => {
+        status = parseInt(res.status);
+        return res.json();
+      })
+      .then(
+        (res) => {
+          if (status === 200) {
+            const newListWithoutRemoved = products.filter((item) => item.id !== id);
+            setProduct(newListWithoutRemoved);
+          } else {
+            alert(res.error);
+          }
+        }, (error) => {
+          alert(error)
+        }
+      )
+    }
+
 
 
 return (
     <div className="container-fluid">
       <h1 className="kaikkiTuotteetOtsikko">Kaikki tuotteet:</h1> 
-      <form onSubmit={showProducts}>
+      <form onSubmit={show}>
     </form>
     <ol>
         {products.map(item => (
@@ -56,6 +90,7 @@ return (
               <ul className="kaikkiTuotteet">Tuotteen kuvaus:&nbsp;{item.description}</ul>
               <ul className="kaikkiTuotteet">Tuotteen paino:&nbsp;{item.weight}</ul>
               <ul className="kaikkiTuotteet">Varastossa:&nbsp;{item.stock}</ul>
+              <a onClick={() => deleteProduct(item.id)} href="#">Poista tuote:</a>
             </li>
         ))}
       </ol>    
