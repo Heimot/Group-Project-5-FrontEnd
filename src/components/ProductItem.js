@@ -44,7 +44,6 @@ export default function ProductItem(props) {
     {open ? <Card className="moreData">
         <Button onClick={() => addToCart(props.product.id)} className="addToCart">Lisää ostoskoriin</Button>
         <Card.Text className="productCardMoreData">
-          U CAN ADD MORE TEXT HERE
         </Card.Text>
       </Card> : null}
   </Card>

@@ -11,3 +11,25 @@ h5 {
     margin: 4px;
     padding: 4px;
 }
+
+.accountBtn {
+    margin: 3px !important;
+    background-color: #66FCF1;
+    color: black;
+    border-color: #66FCF1;
+}
+
+.accountBtn:hover {
+    background-color: #45A29E;
+    border-color: #45A29E;
+}
+
+.accountBtn:active {
+    background-color: #66FCF1 !important;
+    border-color: #66FCF1 !important;
+}
+
+.accountBtn:visited {
+    background-color: #45A29E !important;
+    border-color: #45A29E !important;
+}

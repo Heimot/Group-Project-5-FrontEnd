@@ -58,6 +58,7 @@
 .subGroups {
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .subGroupCol:hover {

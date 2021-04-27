@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import './login.css';
 
 export default function Login() {
