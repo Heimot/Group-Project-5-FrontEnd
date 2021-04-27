@@ -41,7 +41,7 @@ function App() {
             <Navigation />
             <div className="row rowWidth">
               <div className="col-md-3 col-lg-2 productGroupsRow">
-                <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory"]}>
+                <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory", "/search"]}>
                   <ProductGroups />
                 </Route>
               </div>
@@ -93,7 +93,7 @@ function App() {
             <Route path="/info/tietosuoja">
               <Tietosuoja />
             </Route>
-            <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory"]}>
+            <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory", "/search"]}>
               <ProductList isOpen={(value) => setItem(value)} isOpen2={(value) => setItem(value)} />
             </Route>
             <Route exact path="/">
