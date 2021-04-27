@@ -1,5 +1,6 @@
 import { Nav, Navbar, NavDropdown, FormControl, Button } from "react-bootstrap";
 import { useEffect, useState } from 'react';
+import SearchedItems from './SearchedItems';
 import "bootstrap/dist/css/bootstrap.min.css";
 import icon from "../img/D5-uus.png";
 import './navigation.css';
@@ -9,10 +10,10 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import useFetch from './hooks/fetch';
 
 function Navigation() {
-  const [width, setwidth] = useState(getWidth())
+  const [width, setwidth] = useState(getWidth());
 
   let category = useFetch('http://localhost/Group-Project-5-BackEnd/category.php', { method: "GET", headers: { 'Content-Type': 'application/json' } });
-  let sub = useFetch('http://localhost/Group-Project-5-BackEnd/allsub.php', { method: "GET", headers: { 'Content-Type': 'application/json' } })
+  let sub = useFetch('http://localhost/Group-Project-5-BackEnd/allsub.php', { method: "GET", headers: { 'Content-Type': 'application/json' } });
 
   function subCategories(id, ryhma) {
     if (sub) {
@@ -56,8 +57,7 @@ function Navigation() {
       <Navbar.Toggle className="navCategories" aria-controls="responsive-navbar-nav" />
       <div className="navBarMain">
         <div className="navBarMain">
-          <FormControl name="form1" type="text" method="get" action="search.php" placeholder="Hae tuotteita ja valmistajia" className="mr-sm-2 navigationSearchInput" required/>
-          <Button name="submit" className="navigationSearchBtn" variant="outline-primary">Search</Button>
+          <SearchedItems />
         </div>
         <Nav.Link className="navCartAndLogin" href="/login">
           <FontAwesomeIcon icon={faUserCircle} size="3x" />
