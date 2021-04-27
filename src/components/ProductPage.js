@@ -92,7 +92,7 @@ function ProductPage(props) {
       {productData ? (
         <div className="row">
           <div className="col-sm-12 col-lg-5">
-            <Slider className="productSlider" {...productImageSettings}>
+            <Slider className="productSlider mt-3" {...productImageSettings}>
               {productData.map((img) => {
                 let url = img.picture;
                 if (url === null) {
@@ -108,7 +108,7 @@ function ProductPage(props) {
               })}
             </Slider>
           </div>
-          <div className="col-sm-12 col-lg-5">
+          <div className="col-sm-12 col-lg-5 mt-3">
             <Card.Title>{productData[0].name}</Card.Title>
             <Card.Text className="productCode">
               Tuotekoodi {productData[0].id}
@@ -119,8 +119,23 @@ function ProductPage(props) {
                 Reviews
               </Button>
             </div>
-            <div className="col-sm-12 col-lg-5">
+            <div className="col-sm-12 col-lg-12">
               <div className="productPrice">{productData[0].price}€</div>
+              <div>
+              <Card style={{ width: '12rem', background: 'whitesmoke', float: 'right'}}>
+  <Card.Body>
+    <Card.Title className="text-center">Varastosaldo</Card.Title>
+    <Card.Subtitle className="text-muted">Verkkokauppa</Card.Subtitle>
+    <Card.Text className="text-right font-weight-bold">
+    {productData[0].stock} kpl
+    </Card.Text>
+    <Card.Subtitle className="text-muted">Oulun myymälä</Card.Subtitle>
+    <Card.Text className="text-right font-weight-bold">
+    {productData[0].stock} kpl
+    </Card.Text>
+    </Card.Body>
+    </Card>
+              </div>
               <div>
                 <Button
                   onClick={() => addToCart()}

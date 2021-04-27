@@ -45,7 +45,23 @@
    background-color: #66FCF1;
    border-color: #66FCF1;
    font-weight: 500;
+   margin-bottom: 5px;
  }
+
+ .productPurchaseBtn:hover {
+  background-color: #45A29E;
+  border-color: #45A29E;
+}
+
+.productPurchaseBtn:active {
+  background-color: #66FCF1 !important;
+  border-color: #66FCF1 !important;
+}
+
+.productPurchaseBtn:visited {
+  background-color: #45A29E !important;
+  border-color:#45A29E !important;
+}
 
  .productDescription {
    margin-top: 60px;
@@ -57,4 +73,9 @@
  }
  .hidden {
    display: none;
+ }
+
+ .stock {
+   font-weight: bold;
+   font-size: 2em;
  }
