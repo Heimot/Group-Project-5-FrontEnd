@@ -6,19 +6,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import useFetch from "./hooks/fetch";
+import Comments from "./Comments.js";
+import { useHistory } from 'react-router-dom';
 
 // CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./productPage.css";
 
-// IMG
-import IMG from "../img/localproduct.png";
-import Comments from "./Comments.js";
-
 function ProductPage(props) {
   const [Rating, setRating] = useState(null);
   const [showComment, setShowComment] = useState(false);
+
+  const history = useHistory();
 
   var productImageSettings = {
     dots: true,
@@ -30,13 +30,20 @@ function ProductPage(props) {
     centerMode: true,
   };
 
+
+
+  useEffect(() => {
+     return history.listen(() => { 
+        window.location.reload();
+     }) 
+  },[history]) 
+
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("productid");
   let productData = useFetch(
     "http://localhost/Group-Project-5-BackEnd/id.php?id=" + myParam,
     { method: "GET", headers: { "Content-Type": "application/json" } }
   );
-  console.log(productData);
 
   function reviewStars() {
     // Rating is not yet implemented!
@@ -71,6 +78,12 @@ function ProductPage(props) {
     let stringCart = JSON.stringify(cart);
     localStorage.setItem("cart", stringCart);
     let name = productData[0].name;
+    let IMG = "";
+    if (productData[0].picture === null) {
+      IMG = `http://localhost/Group-Project-5-BackEnd/images/default.png`;
+    } else {
+      IMG = `http://localhost/Group-Project-5-BackEnd/images/${productData[0].picture}`;
+    }
     props.isOpen({ id, name, IMG });
   }
 
@@ -80,26 +93,19 @@ function ProductPage(props) {
         <div className="row">
           <div className="col-sm-12 col-lg-5">
             <Slider className="productSlider" {...productImageSettings}>
-              <img
-                alt="rotating pictures"
-                src={IMG}
-                className="productPicture"
-              />
-              <img
-                alt="rotating pictures"
-                src={IMG}
-                className="productPicture"
-              />
-              <img
-                alt="rotating pictures"
-                src={IMG}
-                className="productPicture"
-              />
-              <img
-                alt="rotating pictures"
-                src={IMG}
-                className="productPicture"
-              />
+              {productData.map((img) => {
+                let url = img.picture;
+                if (url === null) {
+                  url = "default.png";
+                }
+                return (
+                  <img
+                    alt="rotating pictures"
+                    src={`http://localhost/Group-Project-5-BackEnd/images/${url}`}
+                    className="productPicture"
+                  />
+                );
+              })}
             </Slider>
           </div>
           <div className="col-sm-12 col-lg-5">
@@ -118,7 +124,8 @@ function ProductPage(props) {
               <div>
                 <Button
                   onClick={() => addToCart()}
-                  className="productPurchaseBtn">
+                  className="productPurchaseBtn"
+                >
                   Lisää ostoskoriin
                 </Button>
                 <Button disabled={true} className="productPurchaseBtn">
