@@ -1,8 +1,24 @@
 .productRow {
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 3em;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    grid-auto-rows: minmax(13rem, auto);
-    justify-content: center;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  grid-auto-rows: minmax(13rem, auto);
+  justify-content: center;
+}
+
+.productListArrang {
+  width: 250px !important;
+}
+
+.productListing {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.productArrangement {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
 }
