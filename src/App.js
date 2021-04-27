@@ -20,15 +20,20 @@ import Registration from "./components/Registration";
 import InfoGroups from "./components/InfoGroups";
 import Producers from "./components/Producers";
 import Admin from "./components/Admin";
-import Login from './components/Login';
 import RegisterSuccess from './components/RegisterSuccess';
 import AccountPage from './components/AccountPage';
 import AccountUpdate from './components/AccountUpdate';
+import Login from './components/Logintest';
+import Logout from './components/Logout';
 
 function App() {
   const [newItem, setItem] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    if(localStorage.getItem("user")){
+      setUser(JSON.parse(localStorage.getItem("user")));
+    }
     if (localStorage.getItem("cart") === null) {
       localStorage.setItem("cart", "[]");
     }
@@ -38,7 +43,7 @@ function App() {
       <div className="middleSmol container">
         <Switch>
           <Route path="/">
-            <Navigation />
+            <Navigation user={user}/>
             <div className="row rowWidth">
               <div className="col-md-3 col-lg-2 productGroupsRow">
                 <Route exact path={["/", "/catalog/:name", "/catalog/:category/:subcategory", "/search"]}>
@@ -54,9 +59,20 @@ function App() {
             <Route path="/cart">
               <Cart />
             </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
+            <Route path="/login" render={() =>
+            <Login
+            user={user}
+            setUser={setUser}
+            />
+            }
+            />
+             <Route path="/logout" render={() =>
+            <Logout
+            user={user}
+            setUser={setUser}
+            />
+            }
+            />
             <Route path="/registration">
               <Registration />
               </Route>
@@ -64,10 +80,10 @@ function App() {
               <RegisterSuccess />
             </Route>
             <Route path="/account/">
-              <AccountPage />
+              <AccountPage  user={user}/>
             </Route>
             <Route path="/accountupdate">
-              <AccountUpdate />
+              <AccountUpdate user={user}/>
             </Route>
             <Route path="/info/">
               <InfoGroups />
@@ -97,7 +113,6 @@ function App() {
               <ProductList isOpen={(value) => setItem(value)} isOpen2={(value) => setItem(value)} />
             </Route>
             <Route exact path="/">
-              <BottomLinks />
               <Tietoja />
             </Route>
             <Footer />

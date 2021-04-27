@@ -67,9 +67,6 @@ export default function ProductItem(props) {
           >
             Lisää ostoskoriin
           </Button>
-          <Card.Text className="productCardMoreData">
-            U CAN ADD MORE TEXT HERE
-          </Card.Text>
         </Card>
       ) : null}
     </Card>

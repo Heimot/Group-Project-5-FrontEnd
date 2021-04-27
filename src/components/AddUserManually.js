@@ -80,25 +80,25 @@ export default function AddUserManually() {
         <div className="container-fluid">
             <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12">
-                <h1 className="otsikkoLisUusTil">Lisää uusi asiakas</h1>
+                <h1 className="otsikkoLisUusTil">Lisää uusi asiakas:</h1>
                 <form onSubmit={registration}>
 
                         <div className="ekatTiedot">
-                            <input className="form-group col-md-6" value={firstname} onChange={e => setFirstname(e.target.value)} placeholder='Asiakkaan etunimi...' />
-                            <input className="form-group col-md-6" value={lastname} onChange={e => setLastname(e.target.value)} placeholder='Asiakkaan sukunimi...' />
-                            <input className="form-group col-md-6" value={address} onChange={e => setAddress(e.target.value)} placeholder='Asiakkaan osoite...' />
-                            <input className="form-group col-md-6" value={postalcode} onChange={e => setPostalcode(e.target.value)} placeholder='Asiakkaan postinumero...' />
+                            <input className="form-group col-md-6" value={firstname} maxLength="256" onChange={e => setFirstname(e.target.value)} placeholder='Asiakkaan etunimi...' />
+                            <input className="form-group col-md-6" value={lastname} maxLength="256" onChange={e => setLastname(e.target.value)} placeholder='Asiakkaan sukunimi...' />
+                            <input className="form-group col-md-6" value={address} maxLength="16" onChange={e => setAddress(e.target.value)} placeholder='Asiakkaan osoite...' />
+                            <input className="form-group col-md-6" value={postalcode} maxLength="16" onChange={e => setPostalcode(e.target.value)} placeholder='Asiakkaan postinumero...' />
                         </div>
 
                         <div className="tokatTiedot">
-                            <input className="form-group col-md-6" value={email} onChange={e => setEmail(e.target.value)} placeholder='Asiakkaan sähköposti...' />
-                            <input className="form-group col-md-6" value={city} onChange={e => setCity(e.target.value)} placeholder='Asiakkaan postitoimipaikka...' />
-                            <input className="form-group col-md-6" value={phone} onChange={e => setPhone(e.target.value)} placeholder='Asiakkaan puhelinnumero...' />
-                            <input className="form-group col-md-6" value={password} onChange={e => setPassword(e.target.value)} placeholder='Luo salasana...'/>
+                            <input className="form-group col-md-6" value={email} maxLength="256" onChange={e => setEmail(e.target.value)} placeholder='Asiakkaan sähköposti...' />
+                            <input className="form-group col-md-6" value={city} maxLength="64" onChange={e => setCity(e.target.value)} placeholder='Asiakkaan postitoimipaikka...' />
+                            <input className="form-group col-md-6" value={phone} maxLength="16" onChange={e => setPhone(e.target.value)} placeholder='Asiakkaan puhelinnumero...' />
+                            <input className="form-group col-md-6" value={password} maxLength="256" onChange={e => setPassword(e.target.value)} placeholder='Luo salasana...'/>
 
                             <input type="hidden" value={customerid} onChange={e => setCustomerid(e.target.value)}/>
                         </div>
-                            <button type="submit" className="tilausNappi btn btn-block">Lisää Asiakas:</button>
+                            <button type="submit" className="tilausNappi btn btn-block">Lisää uusi asiakas:</button>
                 </form>
                 </div>
                 <div>

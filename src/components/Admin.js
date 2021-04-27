@@ -1,6 +1,9 @@
 import AddUserManually from "./AddUserManually";
 import AllUsers from "./AllUsers";
 import AdminPicture from "./adminPicture";
+import SearchAllProducts from "./SearchAllProducts";
+import AddProductManually from "./AddProductManually";
+
 
 
 
@@ -10,7 +13,8 @@ export default function Admin() {
             <div>
                     <AddUserManually />
                     <AllUsers />
-                    <AdminPicture />
+                    <AddProductManually />
+                    <SearchAllProducts />
             </div>
     );
 }

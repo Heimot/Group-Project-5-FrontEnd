@@ -9,7 +9,7 @@ import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import useFetch from './hooks/fetch';
 
-function Navigation() {
+function Navigation({user}) {
   const [width, setwidth] = useState(getWidth());
 
   let category = useFetch('http://localhost/Group-Project-5-BackEnd/category.php', { method: "GET", headers: { 'Content-Type': 'application/json' } });
@@ -59,7 +59,10 @@ function Navigation() {
         <div className="navBarMain">
           <SearchedItems />
         </div>
-        <Nav.Link className="navCartAndLogin" href="/login">
+        <div className="name">
+          {user ? user.firstName : ''}
+        </div>
+        <Nav.Link className="navCartAndLogin" href="/account">
           <FontAwesomeIcon icon={faUserCircle} size="3x" />
         </Nav.Link>
         <Nav.Link className="navCartAndLogin" eventKey={2} href="/cart">

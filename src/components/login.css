@@ -10,3 +10,18 @@
  .register:hover {
     color: #66FCF1;
  }
+
+    .logga:link, .logga:visited {
+        background-color: #66FCF1;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 2px;
+      }
+      
+      .logga:hover, .logga:active {
+        background-color: #45A29E;
+        color: white;
+      }

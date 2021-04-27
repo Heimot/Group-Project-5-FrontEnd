@@ -3,6 +3,7 @@ import { FormControl, Form, Button, Col, InputGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react';
 import { faAt, faCity, faKey, faMapMarkedAlt, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from 'react-router';
 
 export default function Registration() {
 
@@ -17,7 +18,7 @@ export default function Registration() {
   const [city, setCity] = useState('');
   const [phone, setPhone] = useState('');
   
-
+  let history = useHistory();
   function registration(e) {
     e.preventDefault();
 
@@ -40,6 +41,7 @@ export default function Registration() {
     .then(
       (response) => {
         if (response === "Success!") {
+          history.push('/registrationsuccess');
           fetch('http://localhost/Group-Project-5-BackEnd/registration.php', {
             method: 'POST',
             headers: {

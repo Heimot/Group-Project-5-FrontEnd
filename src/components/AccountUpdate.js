@@ -1,46 +1,44 @@
 import './registration.css';
 import { FormControl, Form, Button, Col, InputGroup } from "react-bootstrap";
+import { Redirect } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { faAt, faCity, faKey, faMapMarkedAlt, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 
-export default function AccountUpdate() {
+export default function AccountUpdate({setUser,user}) {
 
   const [serverResponse, setServerResponse] = useState('');
 
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [address, setAddress] = useState('');
   const [postalcode, setPostalcode] = useState('');
   const [city, setCity] = useState('');
   const [phone, setPhone] = useState('');
-  
+  const [id, setId] = useState('');
 
-  function registration(e) {
+  useEffect(() => {
+    if (user) {
+    setEmail(user.email);
+    setFirstname(user.firstName);
+    setLastname(user.lastName);
+    setAddress(user.address);
+    setPostalcode(user.postalcode);
+    setCity(user.city);
+    setPhone(user.phone);
+    setId(user.id);
+    }
+  }, [user]);
+
+  function update(e) {
     e.preventDefault();
 
-    if (email === '' || password === '' || firstname === '' || lastname === '' || address === '' || postalcode === '' || city === '' || phone === '') {
+    if (email === '' || firstname === '' || lastname === '' || address === '' || postalcode === '' || city === '' || phone === '') {
       alert("Kaikki kentät vaaditaan!");
       return;
     }
-
-    fetch('http://localhost/Group-Project-5-BackEnd/registration_check.php', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-type':'application/json',
-      },
-      body: JSON.stringify({
-        email: email,
-      })
-    })
-    .then(response => response.text())
-    .then(
-      (response) => {
-        if (response === "Success!") {
-          fetch('http://localhost/Group-Project-5-BackEnd/registration.php', {
+          fetch('http://localhost/Group-Project-5-BackEnd/updateAccount.php', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -48,13 +46,13 @@ export default function AccountUpdate() {
             },
             body: JSON.stringify({
               email: email,
-              password: password,
               firstname: firstname,
               lastname: lastname,
               address: address,
               postalcode: postalcode,
               city: city,
-              phone: phone
+              phone: phone,
+              id: id
              })
           })
           .then(response => response.text())
@@ -65,22 +63,14 @@ export default function AccountUpdate() {
             alert(error);
           }
           )
-        } else {
-          alert("Näillä tiedoilla on jo luotu käyttäjä")
-        }
-      }, (error) => {
-        alert(error);
       }
-    )
-  }
 
   return (
     <div className="container">
 <div className="col-12 text-center mt-5 mb-3">
       <h1>TILISI TIEDOT</h1>
       </div>
-      <Form onSubmit={registration}>
-
+      <Form onSubmit={update}>
         <Form.Row>
           <Form.Group as={Col}>
             <Form.Label className="formText">SÄHKÖPOSTI</Form.Label>
@@ -90,21 +80,11 @@ export default function AccountUpdate() {
                   <FontAwesomeIcon icon={faAt} />
                   </InputGroup.Text>
                   </InputGroup.Prepend>
-            <Form.Control value={email} type="email" maxLength="256" onChange={e => setEmail(e.target.value)} required/>
+            <Form.Control value={email} type="email" maxLength="256" onChange={e => setEmail(e.target.value)} disabled/>
             </InputGroup>
             </Form.Group>
 
-            <Form.Group as={Col}>
-            <Form.Label className="formText">SALASANA</Form.Label>
-            <InputGroup>
-                <InputGroup.Prepend>
-                <InputGroup.Text>
-                  <FontAwesomeIcon icon={faKey} />
-                  </InputGroup.Text>
-                  </InputGroup.Prepend>
-          <Form.Control value={password} maxLength="256" type="password" onChange={e => setPassword(e.target.value)} required/>
-          </InputGroup>
-          </Form.Group>
+           
           </Form.Row>
 
           <Form.Row>
@@ -185,10 +165,11 @@ export default function AccountUpdate() {
           </Form.Group>
           </Form.Row>          
           <Button className="navigationSearchBtn" type="submit">Päivitä tietosi</Button>
+          <Form.Control value={id} maxLength="16" onChange={e => setId(e.target.value)} hidden/>
       </Form>
       <div>
-      {serverResponse}
       </div>
+      {serverResponse}
     </div>
   );
-}
+  }
