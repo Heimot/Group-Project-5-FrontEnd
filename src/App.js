@@ -51,7 +51,7 @@ function App() {
                 </Route>
               </div>
               <div className="col-md-9 col-lg-10 adSliderRow">
-                <Route exact path="/">
+                <Route exact path={["/", "/catalog/:category/:subcategory", "/catalog/:name", "/search"]}>
                   <AdSlider />
                 </Route>
               </div>
