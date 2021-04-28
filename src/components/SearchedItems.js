@@ -1,3 +1,5 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory} from 'react-router-dom';
@@ -73,11 +75,11 @@ function SearchedItems() {
           name="kukka"
           id="SearchedItemsInput"
           className="AutoCompletePropsInput"
-          placeholder={"Etsi tuotteita"}
+          placeholder={"Hae tuotteita"}
           value={term}
           onChange={(e) => onTextChange(e)}
         />
-        <Button onClick={() => history.push(`/search?item=${term}`)}>Etsi</Button>
+        <Button className="navigationBtn" onClick={() => history.push(`/search?item=${term}`)}><FontAwesomeIcon icon={faSearch} /></Button>
       </div>
       {renderSuggestions()}
     </div>

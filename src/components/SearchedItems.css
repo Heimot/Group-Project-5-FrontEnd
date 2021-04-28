@@ -67,3 +67,24 @@
     text-decoration: underline;
     background-color: rgba(128, 128, 128, 0.20);
 }
+
+.navigationBtn {
+    margin: 0px !important;
+    background-color: #66FCF1 !important;
+    border: none !important;
+    color: black !important;
+    border-radius: none !important;
+}
+
+.navigationBtn:hover {
+    background-color: #45A29E !important;
+    color: white !important;
+}
+
+.navigationBtn:active {
+    background-color: #66FCF1 !important;
+}
+
+.navigationBtn:visited {
+    background-color: #45A29E !important;
+}
