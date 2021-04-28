@@ -186,7 +186,7 @@ export default function Registration() {
           </InputGroup>
           </Form.Group>
           </Form.Row>          
-          <Button className="navigationSearchBtn" type="submit">Rekisteröidy</Button>
+          <Button className="accountBtn" type="submit">Rekisteröidy</Button>
       </Form>
       <div>
       {serverResponse}

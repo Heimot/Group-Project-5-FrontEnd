@@ -9,7 +9,7 @@ export default function Login({setUser,user}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let history = useHistory();
-    
+
     if (user!=null) {
         return <Redirect to="/account" />
       }
@@ -51,7 +51,7 @@ export default function Login({setUser,user}) {
       <Form onSubmit={login}>
           <Form.Control className="mb-3 col-3 col-centered" maxLength="256" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder='Sähköpostiosoite' required/>
           <Form.Control className="mb-3 col-3 col-centered" maxLength="256" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder='Salasana' required/>
-          <Button className="navigationSearchBtn" type="submit">Kirjaudu sisään</Button>
+          <Button className="accountBtn" type="submit">Kirjaudu sisään</Button>
       </Form>
       <a className="register" href="/registration">Unohtuiko salasana? </a>|
       <a className="register" href="/registration"> Rekisteröidy</a>

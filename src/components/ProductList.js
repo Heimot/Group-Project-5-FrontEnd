@@ -89,7 +89,7 @@ export default function ProductList(props) {
       <div>
         <div className="productListing">
           <div>
-            <div className="productArrangement">Lajittele haku</div>
+            <div className="productArrangement">Järjestä</div>
             <Form.Control
               onChange={(e) => handleChange(e)}
               className="productListArrang"
