@@ -119,7 +119,7 @@ function ProductPage(props) {
                 Reviews
               </Button>
             </div>
-            <div className="col-sm-12 col-lg-5">
+            <div className="col-sm-12 col-lg-5 productDescription">
               <div className="productPrice">{productData[0].price}€</div>
               <div>
                 <Button
