@@ -65,7 +65,8 @@
 
  .productDescription {
    margin-top: 60px;
-   max-width: 325px;
+   width: 100%;
+   max-width: 450px;
  }
  .review {
    margin-left: 10px;
