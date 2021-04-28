@@ -26,7 +26,7 @@ export default function AddProductManually() {
           return;
         }
     
-        fetch('http://localhost/Group-Project-5-BackEnd/addNewProduct.php', {
+        fetch('http://localhost/Group-Project-5-BackEnd/productId.php', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
