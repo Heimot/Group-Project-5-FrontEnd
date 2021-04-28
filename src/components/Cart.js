@@ -41,10 +41,13 @@ function Cart() {
             setCredentials(JSON.parse(sessionStorage.getItem("credentials")));
         }
     }, [delivery])
-
-    console.log(credentials)
-
+    
     function newOrder() {
+        let id = null;
+        const user = JSON.parse(localStorage.getItem("user"));
+        if(user) {
+            id = user.id;
+        }
         fetch("http://localhost/Group-Project-5-BackEnd/neworder.php", { 
             method: "POST",
             headers: {
@@ -52,16 +55,17 @@ function Cart() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                customerid: null,
+                customerid: id,
                 price: values.toFixed(2),
-                shipping: 1,
+                shipping: delivery[0].id,
                 email: credentials.email,
                 firstname: credentials.firstName,
                 lastname: credentials.lastName,
                 address: credentials.address,
-                postalcode: credentials.zip,
-                city: credentials.municipality,
-                phone: credentials.phoneNumber,
+                postalcode: credentials.postalcode,
+                city: credentials.city,
+                phone: credentials.phone,
+                orderComment: credentials.orderInfo,
                 cart: cart
             })
         })
@@ -127,10 +131,10 @@ function Cart() {
                                             </p>
                                             <p>
                                                 <div>{credentials.address}</div>
-                                                <div>{`${credentials.zip} ${credentials.municipality}`}</div>
+                                                <div>{`${credentials.postalcode} ${credentials.city}`}</div>
                                             </p>
                                             <p>
-                                                <div>{credentials.phoneNumber}</div>
+                                                <div>{credentials.phone}</div>
                                                 <div>{credentials.email}</div>
                                             </p>
                                             <p>
