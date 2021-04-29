@@ -3,6 +3,7 @@
 export default function Tietoja() {
     return (
         <div className="container-fluid">
+            <hr className="viiva"></hr>
             <div className="row">
                 <div className="col medium-4 small-4 large-6">
                     <div className="col-inner text-left">
