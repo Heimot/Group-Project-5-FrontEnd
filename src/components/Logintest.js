@@ -34,7 +34,6 @@ export default function Login({setUser,user}) {
 
     if (response.ok) {
         const json = await response.json();
-        localStorage.setItem("user",JSON.stringify(json));
         setUser(json);
         history.push('/');
     } else {

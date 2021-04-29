@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState, useEffect } from 'react';
 import { faAt, faCity, faKey, faMapMarkedAlt, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 
-export default function AccountUpdate({setUser,user}) {
+export default function AccountUpdate({setUser, user}) {
 
   const [serverResponse, setServerResponse] = useState('');
 
@@ -31,6 +31,7 @@ export default function AccountUpdate({setUser,user}) {
     }
   }, [user]);
 
+
   function update(e) {
     e.preventDefault();
 
@@ -38,6 +39,7 @@ export default function AccountUpdate({setUser,user}) {
       alert("Kaikki kentät vaaditaan!");
       return;
     }
+    console.log(id);
           fetch('http://localhost/Group-Project-5-BackEnd/updateAccount.php', {
             method: 'POST',
             headers: {
@@ -55,10 +57,10 @@ export default function AccountUpdate({setUser,user}) {
               id: id
              })
           })
-          .then(response => response.text())
+          .then(response => response.json())
           .then(
-          (response) => {
-            setServerResponse(response);
+          (json) => {
+            setUser(json);
           }, (error) => {
             alert(error);
           }

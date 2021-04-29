@@ -30,6 +30,11 @@ function App() {
   const [newItem, setItem] = useState(null);
   const [user, setUser] = useState(null);
 
+  const setUserWithStorage = (data) => {
+    setUser(data)
+    localStorage.setItem("user",JSON.stringify(data));
+  } 
+
   useEffect(() => {
     if(localStorage.getItem("user")){
       setUser(JSON.parse(localStorage.getItem("user")));
@@ -62,14 +67,14 @@ function App() {
             <Route path="/login" render={() =>
             <Login
             user={user}
-            setUser={setUser}
+            setUser={setUserWithStorage}           
             />
             }
             />
              <Route path="/logout" render={() =>
             <Logout
             user={user}
-            setUser={setUser}
+            setUser={setUserWithStorage}
             />
             }
             />
@@ -83,7 +88,8 @@ function App() {
               <AccountPage  user={user}/>
             </Route>
             <Route path="/accountupdate">
-              <AccountUpdate user={user}/>
+              <AccountUpdate user={user}
+            setUser={setUserWithStorage}/>
             </Route>
             <Route path="/info/">
               <InfoGroups />
