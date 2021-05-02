@@ -7,6 +7,7 @@ export default function AllUsers() {
     const [customer, setCustomer] = useState('');
     const [customerId, setCustomerId] = useState(0);
   
+    
 
     useEffect(() => {
       fetch('http://localhost/Group-Project-5-BackEnd/showusers.php')
@@ -68,28 +69,41 @@ export default function AllUsers() {
         }
       )
     }
+    function ShowUsersButton() {
+      const [show,setShow]=useState(false)
+      return (
+        <div className="ShowUsersButton">
+        <button className="tilausNappi btn btn-block" onClick={()=>setShow(!show)} >Näytä asikkaat:</button> 
+
+         {
+           show?   
+           <ol>
+           {customers.map(item => (
+               <li type='none' key={item.id}>
+                 <ul className="kaikkiAsiakkaat">Etunimi:&nbsp;{item.firstname}</ul>
+                 <ul className="kaikkiAsiakkaat">Sukunimi:&nbsp;{item.lastname}</ul>
+                 <ul className="kaikkiAsiakkaat">Osoite:&nbsp;{item.address}</ul>
+                 <ul className="kaikkiAsiakkaat">Postinumero:&nbsp;{item.postalcode}</ul>
+                 <ul className="kaikkiAsiakkaat">Kaupunki:&nbsp;{item.city}</ul>
+                 <ul className="kaikkiAsiakkaat">Sähköposti:&nbsp;{item.email}</ul>
+                 <ul className="kaikkiAsiakkaat">Puhelinnumero:&nbsp;{item.phone}</ul>
+                 <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas:</a>
+               </li>
+           ))}
+         </ol>       
+           :null
+         }
+         {/* <button onClick={()=>setShow(false)} >Show</button>
+         <button onClick={()=>setShow(true)} >Hide</button> */}
+        </div>
+      );
+    }
 
 
 
 return (
     <div className="container-fluid">
-      <h1 className="kaikkiAsiakkaatOtsikko">Kaikki asiakkaat:</h1>
-      <form onSubmit={show}>
-    </form>
-    <ol>
-        {customers.map(item => (
-            <li type='none' key={item.id}>
-              <ul className="kaikkiAsiakkaat">Etunimi:&nbsp;{item.firstname}</ul>
-              <ul className="kaikkiAsiakkaat">Sukunimi:&nbsp;{item.lastname}</ul>
-              <ul className="kaikkiAsiakkaat">Osoite:&nbsp;{item.address}</ul>
-              <ul className="kaikkiAsiakkaat">Postinumero:&nbsp;{item.postalcode}</ul>
-              <ul className="kaikkiAsiakkaat">Kaupunki:&nbsp;{item.city}</ul>
-              <ul className="kaikkiAsiakkaat">Sähköposti:&nbsp;{item.email}</ul>
-              <ul className="kaikkiAsiakkaat">Puhelinnumero:&nbsp;{item.phone}</ul>
-              <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas:</a>
-            </li>
-        ))}
-      </ol>      
+    <ShowUsersButton />
     </div>
 );
 }

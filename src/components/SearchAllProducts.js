@@ -8,6 +8,16 @@ export default function SearchAllProducts() {
     const [product, setProduct] = useState('');
     const [productId, setProductId] = useState(0);
 
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState('');
+    const [categoryID, setCategoryID] = useState('');
+    const [subCategoryID, setSubCategoryID] = useState('');
+    const [description, setDescription] = useState('');
+    const [weight, setWeightn] = useState('');
+    const [stock, setStock] = useState('');
+    const [id, setID] = useState('');
+
+
 
   
 
@@ -72,14 +82,44 @@ export default function SearchAllProducts() {
         }
       )
     }
+    function updateProduct(id) {
 
+            fetch('http://localhost/Group-Project-5-BackEnd/updateProduct.php', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-type':'application/json',
+              },
+              body: JSON.stringify({
+                name: name,
+                price: price,
+                categoryID: categoryID,
+                subCategoryID: subCategoryID,
+                description: description,
+                weight: weight,
+                stock: stock,
+                id: id
 
+               })
+            })
+            .then(response => response.json())
+            .then(
+            (json) => {
+              setProduct(json);
+            }, (error) => {
+              alert(error);
+            }
+            )
+        }
 
-return (
-    <div className="container-fluid">
-      <h1 className="kaikkiTuotteetOtsikko">Kaikki tuotteet:</h1> 
-      <form onSubmit={show}>
-    </form>
+    function ShowProductsButton() {
+      const [show,setShow]=useState(false)
+      return (
+        <div className="ShowUsersButton">
+        <button className="tilausNappi btn btn-block" onClick={()=>setShow(!show)} >Näytä tuotteet:</button> 
+
+         {
+           show?   
     <ol>
         {products.map(item => (
             <li type='none' key={item.id}>
@@ -93,7 +133,18 @@ return (
               <a onClick={() => deleteProduct(item.id)} href="#">Poista tuote:</a>
             </li>
         ))}
-      </ol>    
+      </ol>      
+           :null
+         }
+         {/* <button onClick={()=>setShow(false)} >Show</button>
+         <button onClick={()=>setShow(true)} >Hide</button> */}
+        </div>
+      );
+    }
+
+return (
+    <div className="container">
+      <ShowProductsButton />
     </div>
 );
 }
