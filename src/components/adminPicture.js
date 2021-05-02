@@ -9,6 +9,8 @@ function AdminPicture() {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("test", text);
+
+    
     fetch("http://localhost/Group-Project-5-BackEnd/uploadImageTest.php", {
       method: "POST",
       body: formData,
@@ -18,6 +20,7 @@ function AdminPicture() {
         console.log(result);
       });
   }
+
 
   function handleChange(e) {
     setFile(e.target.files[0]);
