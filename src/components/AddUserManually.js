@@ -62,6 +62,8 @@ export default function AddUserManually() {
               .then(
               (response) => {
                 setServerResponse(response);
+                alert(response);
+                window.location.reload();
               }, (error) => {
                 alert(error);
               }
@@ -101,8 +103,11 @@ export default function AddUserManually() {
                             <button type="submit" className="tilausNappi btn btn-block">Lisää uusi asiakas:</button>
                 </form>
                 </div>
-                <div>
+                {/*<div>
                     {JSON.stringify(serverResponse)}
+                </div>*/}
+                <div style={{margin: '1em'}}>
+                  {/*placeholder*/}             
                 </div>
             </div>
         </div>

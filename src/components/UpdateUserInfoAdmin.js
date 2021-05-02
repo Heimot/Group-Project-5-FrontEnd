@@ -52,25 +52,36 @@ export default function UpdateUserInfo({ active, SelectedCustomer }) {
       (response) => {
         setServerResponse(response);
         alert("Tietoa muokattu");
+        window.location.reload();
       }, (error) => {
         alert(error);
       }
     )        
   }
 
+  const divStyle = {
+    backgroundColor: '#a1ffe9',
+    padding: '1em'
+  };
+
 
   return (
-    <div className="container">
+    <div style={divStyle} className="container">
       <form onSubmit={UpdateCurrentUser}>
-        <label>Tietoa:
-          <input value={firstname} onChange={e => setFirstname(e.target.value)} placeholder='Asiakkaan etunimi...'/>
-          <input value={lastname} onChange={e => setLastname(e.target.value)} placeholder='Asiakkaan sukunimi...'/>
-          <input value={address} onChange={e => setAddress(e.target.value)} placeholder='Asiakkaan osoite...'/>
-          <input value={postalcode} onChange={e => setPostalcode(e.target.value)} placeholder='Asiakkaan postinumero...'/>
-          <input value={city} onChange={e => setCity(e.target.value)} placeholder='Asiakkaan postitoimipaikka...'/>
-          <input value={phone} onChange={e => setPhone(e.target.value)} placeholder='Asiakkaan puhelinnumero...'/>
-          <button>Varmistaa päivitetty tietoa</button>
-        </label>
+        <label>Tietoa:</label>
+          <div>
+            <input className="form-group col-md-4" value={firstname} onChange={e => setFirstname(e.target.value)} placeholder='Asiakkaan etunimi...'/>
+            <input className="form-group col-md-4" value={lastname} onChange={e => setLastname(e.target.value)} placeholder='Asiakkaan sukunimi...'/>
+            <input className="form-group col-md-4" value={address} onChange={e => setAddress(e.target.value)} placeholder='Asiakkaan osoite...'/>
+          </div>
+          <div>
+            <input className="form-group col-md-4" value={postalcode} onChange={e => setPostalcode(e.target.value)} placeholder='Asiakkaan postinumero...'/>
+            <input className="form-group col-md-4" value={city} onChange={e => setCity(e.target.value)} placeholder='Asiakkaan postitoimipaikka...'/>
+            <input className="form-group col-md-4" value={phone} onChange={e => setPhone(e.target.value)} placeholder='Asiakkaan puhelinnumero...'/>
+          </div>
+          <div style={{ display: "flex" }}>
+            <button style={{ marginLeft: "auto" }} className="tilausNappi btn">Varmistaa päivitetty tietoa</button>
+          </div>                
       </form>
       {/*<div>
       {serverResponse}

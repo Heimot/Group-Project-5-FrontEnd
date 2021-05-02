@@ -75,8 +75,21 @@ export default function AllUsers() {
       const [editorUserId,setEditorUserId]=useState(0);
 
       function setVisible(rowUserId) {
-        setEditorUserId(rowUserId);
+        if ((editorUserId === 0)){
+          setEditorUserId(rowUserId)
+        } else if(rowUserId === editorUserId) {
+          setEditorUserId(0)
+        } else {
+          setEditorUserId(rowUserId)
+        }        
       }
+
+      const buttonStyle = {
+        backgroundColor: '#a1ffe9',
+        border: 'none',
+        backgroundImage: 'none',
+        marginLeft: '1em'
+      };
 
       return (
         <div className="ShowUsersButton">
@@ -95,7 +108,7 @@ export default function AllUsers() {
                  <ul className="kaikkiAsiakkaat">Sähköposti:&nbsp;{item.email}</ul>
                  <ul className="kaikkiAsiakkaat">Puhelinnumero:&nbsp;{item.phone}</ul>
                  <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas: {item.firstname} {item.lastname}</a>
-                 <button className="tilausNappi btn" onClick={()=>setVisible(item.id)} >Muokkaa tietoa: {item.firstname} {item.lastname}</button>
+                 <button style={buttonStyle} onClick={()=>setVisible(item.id)} >Muokkaa tietoa: {item.firstname} {item.lastname}</button>
                  {
                    (item.id === editorUserId)? 
                    <UpdateUserInfo SelectedCustomer={item}/>
