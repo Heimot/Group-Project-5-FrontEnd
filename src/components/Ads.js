@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import AD from "../img/tarjous.jpg";
 import AD2 from "../img/gaming.jpg";
 import AD3 from "../img/outeletpohja.jpg";
@@ -37,31 +38,48 @@ function AdSlider() {
     <div className="allADS container">
       <Slider className="adMargins" {...settings}>
         <div>
-          <img alt="ad" className="BIGAD" src={AD}></img>
+        <Link to="/product?productid=15">
+          <img alt="ad" className="BIGAD" src={AD}>
+          </img>
+          </Link>
         </div>
         <div>
+        <Link to="/catalog/Pelit">
           <img alt="ad" className="BIGAD" src={AD2}></img>
+          </Link>
         </div>
         <div>
+        <Link to="catalog/Alelaari">
           <img alt="ad" className="BIGAD" src={AD3}></img>
+          </Link>
         </div>
         <div>
+        <Link to="/product?productid=15">
           <img alt="ad" className="BIGAD" src={AD4}></img>
+          </Link>
         </div>
         <div>
+        <Link to="/catalog/Tietokoneet/Työtietokoneet">
           <img alt="ad" className="BIGAD" src={AD5}></img>
+          </Link>
         </div>
       </Slider>
       {pathArray[1] === "" ? (
         <Slider className="adMargins" {...settings2}>
           <div>
+          <Link to="/catalog/Pelit">
             <img alt="ad" className="SMALLAD" src={AD2}></img>
+            </Link>
           </div>
           <div>
+          <Link to="catalog/Alelaari">
             <img alt="ad" className="SMALLAD" src={AD3}></img>
+            </Link>
           </div>
           <div>
+          <Link to="/catalog/Tietokoneet/Työtietokoneet">
             <img alt="ad" className="SMALLAD" src={AD5}></img>
+            </Link>
           </div>
         </Slider>
       ) : null}
