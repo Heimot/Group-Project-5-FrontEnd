@@ -7,7 +7,7 @@ import { useHistory } from "react-router";
 
 export default function Admin() {
   let history = useHistory();
-  if (JSON.parse(localStorage.getItem("user")).role !== "2") {
+  if (((JSON.parse(localStorage.getItem("user")) == null)) || (JSON.parse(localStorage.getItem("user")).role !== "2")) {
     history.push("/");
   }
 

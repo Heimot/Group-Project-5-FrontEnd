@@ -1,13 +1,12 @@
 import './allusers.css';
 import React, { useState,useEffect } from 'react';
+import UpdateUserInfo from './UpdateUserInfoAdmin.js';
 
 
 export default function AllUsers() {
     const [customers, setCustomers] = useState([]);
     const [customer, setCustomer] = useState('');
     const [customerId, setCustomerId] = useState(0);
-  
-    
 
     useEffect(() => {
       fetch('http://localhost/Group-Project-5-BackEnd/showusers.php')
@@ -69,8 +68,16 @@ export default function AllUsers() {
         }
       )
     }
+
     function ShowUsersButton() {
       const [show,setShow]=useState(false)
+
+      const [editorUserId,setEditorUserId]=useState(0);
+
+      function setVisible(rowUserId) {
+        setEditorUserId(rowUserId);
+      }
+
       return (
         <div className="ShowUsersButton">
         <button className="tilausNappi btn btn-block" onClick={()=>setShow(!show)} >Näytä asikkaat:</button> 
@@ -87,7 +94,13 @@ export default function AllUsers() {
                  <ul className="kaikkiAsiakkaat">Kaupunki:&nbsp;{item.city}</ul>
                  <ul className="kaikkiAsiakkaat">Sähköposti:&nbsp;{item.email}</ul>
                  <ul className="kaikkiAsiakkaat">Puhelinnumero:&nbsp;{item.phone}</ul>
-                 <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas:</a>
+                 <a onClick={() => deleteCustomer(item.id)} href="#">Poista asiakas: {item.firstname} {item.lastname}</a>
+                 <button className="tilausNappi btn" onClick={()=>setVisible(item.id)} >Muokkaa tietoa: {item.firstname} {item.lastname}</button>
+                 {
+                   (item.id === editorUserId)? 
+                   <UpdateUserInfo SelectedCustomer={item}/>
+                   :null
+                 }
                </li>
            ))}
          </ol>       
