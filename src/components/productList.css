@@ -13,9 +13,15 @@
 
 .productListing {
   display: flex;
-  justify-content: left;
-  margin-left: 100px;
+  justify-content: flex-end;
+  margin-right: 88px;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .productListing {
+    margin-right: 5px;
+  }
 }
 
 .productArrangement {

@@ -27,7 +27,9 @@ function ProductPage(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    variableWidth: false,
     centerMode: true,
+    centerPadding: '0',
   };
 
   useEffect(() => {
@@ -100,7 +102,7 @@ function ProductPage(props) {
                   <img
                     alt="rotating pictures"
                     src={`http://localhost/Group-Project-5-BackEnd/images/${url}`}
-                    className="productPicture"
+
                   />
                 );
               })}

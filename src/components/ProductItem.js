@@ -45,12 +45,14 @@ export default function ProductItem(props) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <a href={`/product?productid=${props.product.id}`}>
-        <Card.Img
-          variant="top"
-          src={`http://localhost/Group-Project-5-BackEnd/images/${picture}`}
-        />
-      </a>
+      <div className="productItemImageSize">
+        <a href={`/product?productid=${props.product.id}`}>
+          <Card.Img
+            variant="top"
+            src={`http://localhost/Group-Project-5-BackEnd/images/${picture}`}
+          />
+        </a>
+      </div>
       <Card.Body className="productCardTitle">
         <Card.Text className="text productCardTitle">
           <a href={`/product?productid=${props.product.id}`}>

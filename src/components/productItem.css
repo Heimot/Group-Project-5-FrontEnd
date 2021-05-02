@@ -72,3 +72,10 @@
 .productCardTitleText {
     padding: 0px 0px 10px 0px !important;
 }
+
+.productItemImageSize {
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
