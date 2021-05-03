@@ -1,13 +1,13 @@
-.buttoni {
+.commentsButton {
    margin-left: 15px;
 }
-.list {
+.commentsList {
    padding-left: 15px;
 }
-.list li{
+.commentsList li{
    padding-top: 10px;
 }
-input {
+.commentsInput {
    height: 45px;
    border-radius: 5px;
    margin-bottom: 32px;

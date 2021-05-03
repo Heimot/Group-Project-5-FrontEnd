@@ -51,13 +51,13 @@ export default function Comments() {
    return (
       <div>
          <form onSubmit={postComment}>
-         <input type="text" name="comment" value={comment} onChange={e => setComment(e.target.value)} />
-            <Button className="buttoni" type="submit">
+         <input className="commentsInput" type="text" name="comment" value={comment} onChange={e => setComment(e.target.value)} />
+            <Button className="commentsButton" type="submit">
                Post comment
             </Button>
          </form>
          {comments ?
-         <ul className="list">
+         <ul className="commentsList">
             {readComments()}
          </ul>
          : null }
