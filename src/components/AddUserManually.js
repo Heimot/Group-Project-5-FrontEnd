@@ -5,9 +5,6 @@ export default function AddUserManually() {
 
     const [serverResponse, setServerResponse] = useState([]); // shows last insert ID
 
-
-    
-
     const [customerid, setCustomerid] = useState(0);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

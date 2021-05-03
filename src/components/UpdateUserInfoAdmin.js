@@ -1,7 +1,7 @@
 // import './App.css';
 import React, { useState, useEffect } from 'react';
 
-export default function UpdateUserInfo({ active, SelectedCustomer }) {  
+export default function UpdateUserInfo({ SelectedCustomer }) {  
   const [serverResponse, setServerResponse] = useState('');
   
   //const [email, setEmail] = useState('');

@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import './searchAllProducts.css';
+import UpdateProductInfo from './UpdateProductInfoAdmin.js';
 
 
 
@@ -82,38 +83,31 @@ export default function SearchAllProducts() {
         }
       )
     }
-    function updateProduct(id) {
-
-            fetch('http://localhost/Group-Project-5-BackEnd/updateProduct.php', {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-type':'application/json',
-              },
-              body: JSON.stringify({
-                name: name,
-                price: price,
-                categoryID: categoryID,
-                subCategoryID: subCategoryID,
-                description: description,
-                weight: weight,
-                stock: stock,
-                id: id
-
-               })
-            })
-            .then(response => response.json())
-            .then(
-            (json) => {
-              setProduct(json);
-            }, (error) => {
-              alert(error);
-            }
-            )
-        }
+    
 
     function ShowProductsButton() {
       const [show,setShow]=useState(false)
+
+      const [editorProductId,setEditorProductId]=useState(0);
+
+      function setVisible(rowProductId) {
+        if ((editorProductId === 0)){
+          setEditorProductId(rowProductId)
+        } else if(rowProductId === editorProductId) {
+          setEditorProductId(0)
+        } else {
+          setEditorProductId(rowProductId)
+        }        
+      }
+
+      const buttonStyle = {
+        backgroundColor: '#a1ffe9',
+        border: 'none',
+        backgroundImage: 'none',
+        marginLeft: '1em'
+      };
+
+
       return (
         <div className="ShowUsersButton">
         <button className="tilausNappi btn btn-block" onClick={()=>setShow(!show)} >Näytä tuotteet:</button> 
@@ -131,6 +125,13 @@ export default function SearchAllProducts() {
               <ul className="kaikkiTuotteet">Tuotteen paino:&nbsp;{item.weight}</ul>
               <ul className="kaikkiTuotteet">Varastossa:&nbsp;{item.stock}</ul>
               <a onClick={() => deleteProduct(item.id)} href="#">Poista tuote:</a>
+              <button style={buttonStyle} onClick={()=>setVisible(item.id)} >Muokkaa tietoa: {item.name}</button>
+                 {
+                   (item.id === editorProductId)? 
+                   <UpdateProductInfo SelectedProduct={item}/>
+                   :null
+                 }
+
             </li>
         ))}
       </ol>      
