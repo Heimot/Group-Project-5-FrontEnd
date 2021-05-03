@@ -1,0 +1,19 @@
+.buttoni {
+   margin-left: 15px;
+}
+.list {
+   padding-left: 15px;
+}
+.list li{
+   padding-top: 10px;
+}
+input {
+   height: 45px;
+   border-radius: 5px;
+   margin-bottom: 32px;
+   margin-top: 32px;
+   margin-left: 3%;
+}
+.commentDelete {
+   margin-left: 10px;
+}

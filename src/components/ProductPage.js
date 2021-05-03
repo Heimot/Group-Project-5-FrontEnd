@@ -165,7 +165,6 @@ function ProductPage(props) {
             </div>
             <div
               id="reviews"
-              className="btn"
               style={{ display: showComment ? "inline" : "none" }}
             >
               <Comments />
