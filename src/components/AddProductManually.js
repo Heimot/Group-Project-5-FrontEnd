@@ -61,6 +61,8 @@ export default function AddProductManually() {
                 console.log(result);
               });
           }
+          alert("Tuote " + name + " lisätty!");
+          window.location.reload();
         },
         (error) => {
           alert(error);
@@ -188,6 +190,9 @@ export default function AddProductManually() {
         </div>
         <div>{/*JSON.stringify(serverResponse)*/}</div>
       </div>
+      <div style={{margin: '1em'}}>
+                  {/*placeholder*/}             
+                </div>
     </div>
   );
 }
