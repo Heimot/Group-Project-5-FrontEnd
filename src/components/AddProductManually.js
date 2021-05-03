@@ -186,7 +186,7 @@ export default function AddProductManually() {
             </button>
           </form>
         </div>
-        <div>{JSON.stringify(serverResponse)}</div>
+        <div>{/*JSON.stringify(serverResponse)*/}</div>
       </div>
     </div>
   );
